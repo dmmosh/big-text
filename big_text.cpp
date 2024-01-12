@@ -89,9 +89,9 @@ std::string big_text(const std::string& input){
 
 int main(int argc, char **argv){
     
-
     
-    if(strcmp(argv[1], "--help")) {
+    
+    if(!strcmp(argv[1], "--help")) {
         std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
         "by Dmytro Moshkovskyi\n" +
         "function from Inficonnect4 made for a terminal executable\n" +
