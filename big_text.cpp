@@ -8,7 +8,9 @@
 LE BIG TEXT 
 (in terminal)
 
-(cd scripts; clang++ big_text.cpp -o bt && .bt)
+TODO: add support for more big text
+
+
 
 */
 
@@ -85,6 +87,8 @@ std::string big_text(const std::string& input){
 
 
 int main(int argc, char **argv){
+
+    
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
