@@ -87,7 +87,7 @@ std::string big_text(const std::string& input){
 };
 
 
-int main(int argc, char **argv){
+int main(int argc, char** argv){
     
     
     
