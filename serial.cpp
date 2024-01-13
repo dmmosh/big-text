@@ -15,3 +15,4 @@ int main() {
     while(getline(txtFile, stream)) {
         oa << stream << '\n'; 
     }
+}
