@@ -15,6 +15,13 @@ TODO: add support for more big text
 */
 
 
+// if windows 32/64 bit , run a command to allow ufc 8 encoding
+// lazy fix for windows
+#if _WIN32
+    std::system("chcp 65001");
+#endif
+
+
 //converts to BIG text
 //string as value because it might be modified
 std::string big_text(const std::string& input, const bool& have_lines){
