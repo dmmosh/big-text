@@ -89,7 +89,7 @@ std::string big_text(const std::string& input){
 int main(int argc, char** argv){
     
     std::string out;
-    for(int i=0; i<argc; i++){
+    for(int i=1; i<=argc; i++){
         if(!strcmp(argv[i], "--help")) {
             std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
             "by Dmytro Moshkovskyi\n" +
