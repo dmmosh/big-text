@@ -111,6 +111,9 @@ int main(int argc, char** argv){
         
     }
     
+    for(const std::string& out_str : out) {
+        std::cout << out_str << N;
+    }
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
