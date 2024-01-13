@@ -11,7 +11,5 @@ int main() {
 
     std::string stream;
 
-    while(getline(txtFile, stream)) {
-        oa << "fdjsl" << '\n'; 
-    }
+    oa << "fdjsl" << '\n'; 
 }
