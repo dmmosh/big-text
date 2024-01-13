@@ -102,7 +102,7 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (std::string(argv[i]).find('\n') != std::string::npos) {
+        if (std::string(argv[i]).find("\\n") != std::string::npos) {
             out.push_back("");
             continue;
         }
