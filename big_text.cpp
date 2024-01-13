@@ -98,7 +98,7 @@ int main(int argc, char** argv){
             "written in c++\n\"").c_str());
             return 0;
         }
-        out += argv[i] + ' ';
+        out += argv[i] + " ";
         
     }
     
