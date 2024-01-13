@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <string.h>
+#include <fstream>
 #define N '\n'
 
 //converts to BIG text
