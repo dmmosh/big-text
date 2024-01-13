@@ -5,7 +5,7 @@ A function from my Inficonnect4 project made into a separate executable.
 Made to work with Linux and Windows (with a lazy fix).
 
 
-`
+```
 USAGE: 
     btxt [options] text ...
 
@@ -14,4 +14,4 @@ OPTIONS:
     -n, --newline       prints following text in a newline
     -nl, --no-lines     removes the top and bottom lines, enabled by default
     -x=, --times=<value> repeats the string a given N times
-`
+```
