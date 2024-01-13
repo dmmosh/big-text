@@ -104,7 +104,8 @@ int main(int argc, char** argv){
             std::system(("echo -e \"OVERVIEW:\n" + 
             big_text("BIG ASS TEXT", 1) + 
             "by Dmytro Moshkovskyi\n" +
-            "function from Inficonnect4 made for a terminal executable\n" +
+            "function from Inficonnect4\n" +
+            "made for a terminal executable\n" +
             "written in c++\n\"").c_str());
             return 0;
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
