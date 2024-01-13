@@ -27,7 +27,7 @@ int main(int argc, char** argv){
     for(int i=1; i<argc; i++){ //iterates over the argument list
 
         // -h, --help
-        if(argc ==1 || !strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
+        if(argc ==0 || !strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
             big_text("MASSIVE TEXT", 1) + "\"").c_str());
             std::ifstream docs("./commands.txt");
