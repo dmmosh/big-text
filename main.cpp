@@ -32,13 +32,9 @@ int main(int argc, char** argv){
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
             out.back().resize(out.back().size() -1); //removes the space
             out.push_back(""); //pushes a new element
-            continue; 
-        
         // -nl, --no-lines
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
             line = 0; //removes lines
-            continue;
-        
         // -x=
         } else if(!strncmp(argv[i], "-x=", 3)) {
             if(!is_int(argv[i], 3)) {
@@ -46,8 +42,6 @@ int main(int argc, char** argv){
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
-            continue;
-
         // --times=
         } else if (!strncmp(argv[i], "--repeat=", 9)) {
             if(!is_int(argv[i], 9)) {
@@ -55,9 +49,7 @@ int main(int argc, char** argv){
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(9)); //sets to the repeat value
-            continue;
-        
-        }
+        } else {
 
         //if first element or has newline 
         //makes a new element and iterates to it
@@ -65,7 +57,7 @@ int main(int argc, char** argv){
 
         out.back() += argv[i];
         out.back() += " ";
-        
+        }
     }
 
     //remove space from last element
