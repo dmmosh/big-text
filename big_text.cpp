@@ -106,6 +106,7 @@ bool is_int(const char* string, int start_i=0) {
     return true;
 }
 
+
 int main(int argc, char** argv){
     
     std::vector<std::string> out = {""};
@@ -169,13 +170,15 @@ int main(int argc, char** argv){
     }
 
 
+    std::vector<std::string> final_out = out;
     do{
+        final_out.insert(final_out.end(), out.begin(), out.end());
+        repeat--;
+    } while (repeat);
+
     for(std::string& out_str : out) {
-        out_str = big_text(out_str, line);
-        std::system(("echo -e \"" + out_str + "\"").c_str());
+        std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
-    repeat--;
-    } while(repeat); //clears the repeat value
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
