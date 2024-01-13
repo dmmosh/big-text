@@ -101,7 +101,7 @@ int main(int argc, char** argv){
         out += " ";
         
     }
-    
+    out.resize(out.size()-1);
     
     
     int iterate_time = (argv[2]) ? std::atoi(argv[2]) : 0;
