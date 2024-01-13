@@ -10,7 +10,6 @@ LE BIG TEXT
 (in terminal)
 
 TODO: add support for more big text
-
 (cd coding/big_text/; git-cl big_text.cpp -o big_text; ./big_text)
 
 
@@ -102,9 +101,9 @@ int main(int argc, char** argv){
         
     }
     
-    int iterate_time = (isdigit(std::atoi(argv[argc]))) ? std::atoi(argv[2]) : 0;
     
     
+    int iterate_time = (argv[2]) ? std::atoi(argv[2]) : 0;
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
