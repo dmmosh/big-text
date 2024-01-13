@@ -59,12 +59,11 @@ int main(int argc, char** argv){
         }
     }
 
-    /*
+    
     //remove space from last element
     if(out.back().length()){
         out.back().resize(out.back().size() -1);
     }
-    */
 
 
     //copies the wanted amount of times
