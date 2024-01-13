@@ -175,7 +175,7 @@ int main(int argc, char** argv){
         std::system(("echo -e \"" + out_str + "\"").c_str());
     }
     repeat--;
-    } while(repeat) //clears the repeat value
+    } while(repeat); //clears the repeat value
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
