@@ -6,11 +6,10 @@
 
 int main() {
     std::ifstream txtFile("etc/commands.txt");
-    std::ofstream ofc("etc/commands");
+    std::ofstream file{"etc/commands"};
+    boost::archive::text_oarchive oa(file);
 
     std::string stream;
-    
-    boost::archive::text_oarchive oa(ofc);
 
     while(getline(txtFile, stream)) {
         oa << stream << '\n'; 
