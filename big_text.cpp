@@ -66,7 +66,6 @@ std::string big_text(const std::string& input){
             case ' ':  top += ' '; bottom += ' '; break;
             case '!': top += "█"; bottom += "▄"; break;
             case '?': top += "▀█"; bottom += " ▄"; break;
-            case '\n': top += "\n"; bottom += "\n"; break;
             default: continue; //skips any and all other characters
         }
         //adds separator
@@ -91,7 +90,6 @@ int main(int argc, char** argv){
     
     std::vector<std::string> out;
 
-    int z = 0; //element to stdout into vector
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
@@ -106,11 +104,10 @@ int main(int argc, char** argv){
         //makes a new element and iterates to it
         if (i ==1 || !strcmp(argv[i], "\n")) {
             out.push_back("");
-            z++;
         }
 
-        out[z] += argv[i];
-        out[z] += " ";
+        out.back() += argv[i];
+        out.back() += " ";
         
     }
     
