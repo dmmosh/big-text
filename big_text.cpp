@@ -156,6 +156,11 @@ int main(int argc, char** argv){
         
         }
 
+        //if 0 repeats specified, nothing shows
+        if (!repeat) {
+            return 0;
+        }
+
         //if first element or has newline 
         //makes a new element and iterates to it
         
