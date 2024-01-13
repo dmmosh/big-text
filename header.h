@@ -16,7 +16,7 @@ bool is_int(const char* string, int start_i);
 
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
-    for( T& out_var: input){
+    for(T out_var: input){
         out << out_var;
     }
     return out << N;
