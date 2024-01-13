@@ -2,8 +2,7 @@
 
 A function from my Inficonnect4 project made into a separate executable.
 
-Made to work with Linux and Windows (with a lazy fix).
-
+I'm trying to get it to work on Windows but so far it's only available on Linux.
 
 ```
 USAGE: 
