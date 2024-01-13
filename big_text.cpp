@@ -101,6 +101,7 @@ bool is_int(const char* string, int start_i=0) {
         if(!isdigit(string[start_i])) {
             return false;
         }
+        start_i++;
     } while(string[start_i] != '\0');
     return true;
 }
