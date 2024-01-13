@@ -17,7 +17,7 @@ TODO: add support for more big text
 
 //converts to BIG text
 //string as value because it might be modified
-std::string big_text(const std::string& input, const bool& have_lines = 1){
+std::string big_text(const std::string& input, const bool& have_lines){
 
     //TOP BIG LETTERS (match the bottom)
     const std::vector<std::string> top_big = {
@@ -90,7 +90,7 @@ std::string big_text(const std::string& input, const bool& have_lines = 1){
 int main(int argc, char** argv){
     
     std::vector<std::string> out = {""};
-
+    bool line = 1;
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
@@ -100,10 +100,11 @@ int main(int argc, char** argv){
             "written in c++\n\"").c_str());
             return 0;
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
-            out.push_back("");
-            continue;
+            out.back().resize(out.back().size() -1); //removes the space
+            out.push_back(""); //pushes a new element
+            continue; 
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
-            
+            line = 0;
         }
 
         //if first element or has newline 
@@ -116,7 +117,7 @@ int main(int argc, char** argv){
     }
     
     for(std::string& out_str : out) {
-        out_str = big_text(out_str, 0);
+        out_str = big_text(out_str, line);
         std::cout << out_str;
     }
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
