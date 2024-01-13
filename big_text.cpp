@@ -95,7 +95,7 @@ int main(int argc, char** argv){
             "by Dmytro Moshkovskyi\n" +
             "function from Inficonnect4 made for a terminal executable\n" +
             "written in c++\n\"").c_str());
-            continue;
+            return 0;
         }
         out += argv[i];
         out += " ";
