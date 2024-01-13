@@ -113,7 +113,6 @@ int main(int argc, char** argv){
         out[z] += " ";
         
     }
-    out[z].resize(out.size()-1); //removes last space
     
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
