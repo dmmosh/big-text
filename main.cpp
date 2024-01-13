@@ -61,7 +61,7 @@ int main(int argc, char** argv){
 
     
     //remove space from last element
-    if(out.back().length()){
+    if(out.back().length() != 0){
         out.back().resize(out.back().size() -1);
     }
 
