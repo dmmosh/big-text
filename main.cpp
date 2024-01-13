@@ -17,7 +17,10 @@ TODO: add support for more big text
 
 
 int main(int argc, char** argv){
-    
+    if(!argc) {
+        help();
+        return 0;
+    }
     
 
     std::vector<std::string> out = {""};
@@ -28,13 +31,7 @@ int main(int argc, char** argv){
 
         // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
-            std::system(("echo -e \"OVERVIEW:\n" + 
-            big_text("MASSIVE TEXT", 1) + "\"").c_str());
-            std::ifstream docs("./commands.txt");
-            std::string line;
-            while (getline(docs, line)){
-                std::system(("echo -e \"" + line + "\"").c_str());
-            }
+            help();
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {

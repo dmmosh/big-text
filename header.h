@@ -13,3 +13,5 @@ std::string big_text(const std::string& input, const bool& have_lines);
 
 // if string is an int
 bool is_int(const char* string, int start_i);
+
+void help();
