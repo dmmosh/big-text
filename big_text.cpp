@@ -17,7 +17,7 @@ TODO: add support for more big text
 
 //converts to BIG text
 //string as value because it might be modified
-std::string big_text(const std::string& input){
+std::string big_text(const std::string& input, const bool& have_lines = 1){
 
     //TOP BIG LETTERS (match the bottom)
     const std::vector<std::string> top_big = {
@@ -81,10 +81,11 @@ std::string big_text(const std::string& input){
     }
 
     //returns the fat string
-    return top_line + N + top + N + bottom + N + bottom_line + N;
+    return ((have_lines) ? top_line + N : "") + 
+    top + N + bottom + N + 
+    ((have_lines) ? bottom_line + N : "");
 
 };
-
 
 int main(int argc, char** argv){
     
@@ -101,6 +102,8 @@ int main(int argc, char** argv){
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
             out.push_back("");
             continue;
+        } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
+            
         }
 
         //if first element or has newline 
