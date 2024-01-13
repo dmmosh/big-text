@@ -97,11 +97,11 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
 // if string is an int
 bool is_int(const char* string, int start_i=0) {
-    while(string[start_i] != '\0'){
+    do {
         if(!isdigit(string[start_i])) {
             return false;
         }
-    }
+    } while(string[start_i] != '\0');
     return true;
 }
 
