@@ -57,8 +57,8 @@ int main(int argc, char** argv){
             continue;
 
         // --times=
-        } else if (!strncmp(argv[i], "--times=", 8)) {
-            if(!is_int(argv[i], 8)) {
+        } else if (!strncmp(argv[i], "--repeat=", 9)) {
+            if(!is_int(argv[i], 9)) {
                 std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
                 return 0;
             }

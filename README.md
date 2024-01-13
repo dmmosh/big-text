@@ -13,5 +13,5 @@ OPTIONS:
     -h, --help          help page
     -n, --newline       prints following text in a newline
     -nl, --no-lines     removes the top and bottom lines, enabled by default
-    -x=, --times=<value> repeats the string a given N times
+    -x=, --repeat=<value> repeats the string a given N times
 ```
