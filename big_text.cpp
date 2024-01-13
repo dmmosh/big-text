@@ -88,18 +88,32 @@ std::string big_text(const std::string& input, const bool& have_lines){
     }
 
     //returns the fat string
-    return ((have_lines) ? top_line + N : "") + 
-    top + N + bottom + N + 
+    return 
+    ((have_lines) ? top_line + N : "") + 
+        top + N + bottom + N + 
     ((have_lines) ? bottom_line + N : "");
 
 };
 
+// if string is an int
+bool is_int(const char* string, int start_i=0) {
+    for(int i=start_i; i<sizeof(string); i++){
+        if(!isdigit(string[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main(int argc, char** argv){
     
     std::vector<std::string> out = {""};
-    bool line = 1;
+    bool line = 1; //whether to have a line or not
+    int repeat = 1; //whether to repeat or not
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
+
+        // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
             big_text("BIG ASS TEXT", 1) + 
@@ -108,13 +122,28 @@ int main(int argc, char** argv){
             "made for a terminal executable\n" +
             "written in c++\n\"").c_str());
             return 0;
+        // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
             out.back().resize(out.back().size() -1); //removes the space
             out.push_back(""); //pushes a new element
             continue; 
+        
+        // -nl, --no-lines
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
-            line = 0;
+            line = 0; //removes lines
             continue;
+        // -x=
+        } else if(!strncmp(argv[i], "-x=", 3)) {
+        if(!is_int(argv[i], 3)) {
+            std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+            return 0;
+        }
+        // --times=
+        } else if (!strncmp(argv[i], "--times=", 6)) {
+        if(!is_int(argv[i], 6)) {
+            std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+            return 0;
+        }
         }
 
         //if first element or has newline 
@@ -126,6 +155,7 @@ int main(int argc, char** argv){
         
     }
 
+    //remove space from last element
     if(out.back().length()){
         out.back().resize(out.back().size() -1);
     }
