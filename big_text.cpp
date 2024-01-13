@@ -101,7 +101,8 @@ int main(int argc, char** argv){
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
-            std::system(("echo -e \"" + "OVERVIEW:\n"+ big_text("BIG ASS TEXT", 1) + 
+            std::system(("echo -e \"OVERVIEW:\n" + 
+            big_text("BIG ASS TEXT", 1) + 
             "by Dmytro Moshkovskyi\n" +
             "function from Inficonnect4 made for a terminal executable\n" +
             "written in c++\n\"").c_str());
