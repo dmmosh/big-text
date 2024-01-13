@@ -29,7 +29,7 @@ int main(int argc, char** argv){
         // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
-            big_text("BIG ASS TEXT", 1) + "\"").c_str());
+            big_text("MASSIVE TEXT", 1) + "\"").c_str());
             std::ifstream docs("./commands.txt");
             std::string line;
             while (getline(docs, line)){
