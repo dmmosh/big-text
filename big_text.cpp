@@ -88,7 +88,7 @@ std::string big_text(const std::string& input){
 
 int main(int argc, char** argv){
     
-    std::vector<std::string> out;
+    std::vector<std::string> out = {""};
 
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
@@ -102,7 +102,7 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (i ==1 || !strcmp(argv[i], "\n")) {
+        if (!strcmp(argv[i], "\n")) {
             out.push_back("");
             continue;
         }
