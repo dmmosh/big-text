@@ -3,8 +3,7 @@ Big Terminal Text
 By Dmytro Moshkovskyi
 https://github.com/wettestsock/big-text
 
-Function from Inficonnect4,
-made for a terminal executable
+Function from Inficonnect4 made for a terminal executable
 written in C++ 
 
 USAGE: 
@@ -14,4 +13,4 @@ OPTIONS:
     -h, --help          help page
     -n, --newline       prints following text in a newline
     -nl, --no-lines     removes the top and bottom lines, enabled by default
-    -x, --times=<value> repeats the string a given N times
+    -x=, --times=<value> repeats the string a given N times
