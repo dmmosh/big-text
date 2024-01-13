@@ -4,6 +4,9 @@
 //converts to BIG text
 //string as value because it might be modified
 std::string big_text(const std::string& input, const bool& have_lines){
+    if(!input.length()){
+        return "\n";
+    }
 
     //TOP BIG LETTERS (match the bottom)
     const std::vector<std::string> top_big = {
