@@ -112,10 +112,10 @@ int main(int argc, char** argv){
         
     }
     
-    for(const std::string& out_str : out) {
-        std::cout << out_str << N;
+    for(std::string& out_str : out) {
+        out_str = big_text(out_str);
     }
-    
+    std::cout << out;
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
 
