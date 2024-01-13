@@ -24,7 +24,7 @@ int main(int argc, char** argv){
     bool line = 1; //whether to have a line or not
     int repeat = 1; //whether to repeat or not
 
-    int i =0;
+    int i =1;
     do{ //iterates over the argument list
 
         // -h, --help
