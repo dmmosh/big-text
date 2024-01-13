@@ -98,14 +98,14 @@ int main(int argc, char** argv){
             "function from Inficonnect4 made for a terminal executable\n" +
             "written in c++\n\"").c_str());
             return 0;
+        } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
+            out.push_back("");
+            continue;
         }
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (std::string(argv[i]).find("\n") != std::string::npos) {
-            out.push_back("");
-            continue;
-        }
+        
 
         out.back() += argv[i];
         out.back() += " ";
