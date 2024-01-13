@@ -11,6 +11,7 @@ LE BIG TEXT
 
 TODO: add support for more big text
 
+(cd coding/big_text/; git-cl big_text.cpp -o big_text; ./big_text)
 
 
 */
