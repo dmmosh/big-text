@@ -116,7 +116,7 @@ int main(int argc, char** argv){
     }
     
     for(std::string& out_str : out) {
-        out_str = big_text(out_str);
+        out_str = big_text(out_str, 0);
         std::cout << out_str;
     }
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
