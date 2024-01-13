@@ -139,7 +139,7 @@ int main(int argc, char** argv){
         // -x=
         } else if(!strncmp(argv[i], "-x=", 3)) {
             if(!is_int(argv[i], 3)) {
-                std::system("echo -e \"SUPER ERROR: can't multiply, not a number specified\"");
+                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
@@ -148,17 +148,12 @@ int main(int argc, char** argv){
         // --times=
         } else if (!strncmp(argv[i], "--times=", 8)) {
             if(!is_int(argv[i], 8)) {
-                std::system("echo -e \"SUPER ERROR: can't multiply, not a number specified\"");
+                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
             continue;
         
-        }
-
-        //if 0 repeats specified, nothing shows
-        if (!repeat) {
-            return 0;
         }
 
         //if first element or has newline 
