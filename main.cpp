@@ -73,9 +73,12 @@ int main(int argc, char** argv){
         repeat--;
     };
 
+    std::cout << final_out;
+    /*
     for(std::string& out_str : final_out) {
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
+    */
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
