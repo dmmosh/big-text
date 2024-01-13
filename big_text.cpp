@@ -110,7 +110,7 @@ int main(int argc, char** argv){
     int i =0;
 
     do{
-    std::system(("echo -e \"" + big_text(argv[1]) + "\"").c_str());
+    std::system(("echo -e \"" + big_text(out) + "\"").c_str());
     i++;
     } while (i<iterate_time);
 }
