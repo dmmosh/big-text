@@ -5,8 +5,8 @@
 
 
 int main() {
-    std::ifstream txtFile("etc/commands.txt");
-    std::ofstream file{"etc/commands"};
+    //std::ifstream txtFile("etc/commands.txt");
+    std::ofstream file{"etc/commands.txt"};
     boost::archive::text_oarchive oa{file};
 
     std::string stream;
