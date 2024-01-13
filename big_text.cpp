@@ -88,20 +88,20 @@ std::string big_text(const std::string& input){
 
 int main(int argc, char** argv){
     
-    std::string out;
-    for(int i=1; i<argc; i++){
+    std::string out; //output
+    for(int i=1; i<argc; i++){ //iterates over the argument list
         if(!strcmp(argv[i], "--help")) {
             std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
             "by Dmytro Moshkovskyi\n" +
             "function from Inficonnect4 made for a terminal executable\n" +
             "written in c++\n\"").c_str());
-            return 0;
+            continue;
         }
         out += argv[i];
         out += " ";
         
     }
-    out.resize(out.size()-1);
+    out.resize(out.size()-1); //removes last space
     
     
     int iterate_time = (argv[2]) ? std::atoi(argv[2]) : 0;
