@@ -66,6 +66,7 @@ std::string big_text(const std::string& input){
             case ' ':  top += ' '; bottom += ' '; break;
             case '!': top += "█"; bottom += "▄"; break;
             case '?': top += "▀█"; bottom += " ▄"; break;
+            case '\n': top += "\n"; bottom += "\n"; break;
             default: continue; //skips any and all other characters
         }
         //adds separator
