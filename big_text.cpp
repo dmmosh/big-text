@@ -97,13 +97,12 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
 // if string is an int
 bool is_int(const char* string, int start_i=0) {
-
-
-    do{
+    while(string[start_i] != '\0'){
         if(!isdigit(string[start_i])) {
             return false;
         }
-    } while (string[start_i] != '\0');
+        start_i++;
+    }
     return true;
 }
 
@@ -112,7 +111,7 @@ int main(int argc, char** argv){
     
     std::vector<std::string> out = {""};
     bool line = 1; //whether to have a line or not
-    int repeat = 1; //whether to repeat or not
+    int repeat = 0; //whether to repeat or not
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
 
@@ -153,6 +152,7 @@ int main(int argc, char** argv){
             }
             repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
             continue;
+        
         }
 
         //if first element or has newline 
@@ -171,16 +171,15 @@ int main(int argc, char** argv){
 
 
     //copies the wanted amount of times
-    std::vector<std::string> final_out = {};
+    std::vector<std::string> final_out;
     while (repeat){
         final_out.insert(final_out.end(), out.begin(), out.end());
         repeat--;
     };
 
-    for(std::string out_str : final_out) {
+    for(std::string& out_str : final_out) {
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
-    return 0;
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
