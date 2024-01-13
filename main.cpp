@@ -17,7 +17,7 @@ TODO: add support for more big text
 
 
 int main(int argc, char** argv){
-    if(!argc) {
+    if(argc == 1) {
         help();
         return 0;
     }
