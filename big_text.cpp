@@ -10,7 +10,7 @@ LE BIG TEXT
 (in terminal)
 fd
 TODO: add support for more big text
-(cd coding/big_text/; git-cl big_text.cpp -o big_text && ./big_text --help)
+(cd coding/big-text/; git-cl big_text.cpp -o big_text && ./big_text --help)
 
 */
 
