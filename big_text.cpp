@@ -153,7 +153,6 @@ int main(int argc, char** argv){
             }
             repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
             continue;
-        
         }
 
         //if first element or has newline 
