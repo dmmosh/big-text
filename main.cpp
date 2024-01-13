@@ -24,11 +24,10 @@ int main(int argc, char** argv){
     bool line = 1; //whether to have a line or not
     int repeat = 1; //whether to repeat or not
 
-    int i =1;
-    do{ //iterates over the argument list
+    for(int i=1; i<argc; i++){ //iterates over the argument list
 
         // -h, --help
-        if(argc ==1 || !strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
+        if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
             big_text("MASSIVE TEXT", 1) + "\"").c_str());
             std::ifstream docs("./commands.txt");
@@ -74,8 +73,8 @@ int main(int argc, char** argv){
 
         out.back() += argv[i];
         out.back() += " ";
-        i++;
-    } while (i<argc);
+        
+    }
 
     //remove space from last element
     if(out.back().length()){
