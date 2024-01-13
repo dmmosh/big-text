@@ -1,5 +1,9 @@
 #pragma once 
+#include <iostream>
+#include <cstdlib>
+#include <vector>
 #include <string>
+#include <string.h>
 #define N '\n'
 
 //converts to BIG text

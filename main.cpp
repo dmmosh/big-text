@@ -1,8 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-#include <string>
-#include <string.h>
 #include "./header.h"
 
 
@@ -11,8 +6,7 @@ LE BIG TEXT
 (in terminal)
 fd
 TODO: add support for more big text
-(cd coding/big-text/; git-cl big_text.cpp -o big_text && ./big_text --help)
-
+(cd coding/big-text/; git-cl -o btxt main.cpp utils.cpp; ./btxt hiii -x=10);
 */
 
 
