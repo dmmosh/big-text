@@ -2,6 +2,7 @@
 #include <boost/archive/text_iarchive.hpp> 
 #include <fstream>
 #include <string>
+#include <iostream>
 using namespace boost::archive;
 
 void save()
