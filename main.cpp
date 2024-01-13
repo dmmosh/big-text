@@ -81,6 +81,6 @@ int main(int argc, char** argv){
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
-
+    //fdsagh
     //std::system(("echo -e \"" + text_output + "\"").c_str());
 }
