@@ -112,6 +112,7 @@ int main(int argc, char** argv){
             continue; 
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
             line = 0;
+            continue;
         }
 
         //if first element or has newline 
