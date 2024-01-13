@@ -122,7 +122,11 @@ int main(int argc, char** argv){
         out.back() += " ";
         
     }
-    out.back().resize(out.back().size() -1);
+
+    if(out.back().length()){
+        out.back().resize(out.back().size() -1);
+    }
+
 
     for(std::string& out_str : out) {
         out_str = big_text(out_str, line);
