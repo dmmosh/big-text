@@ -117,13 +117,6 @@ int main(int argc, char** argv){
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
-    int i =0;
 
-    std::string text_output;
-    for(const std::string& out_str : out){
-        text_output += big_text(out_str);
-    }
-
-    std::system(("echo -e \"" + text_output + "\"").c_str());
-    i++;
+    //std::system(("echo -e \"" + text_output + "\"").c_str());
 }
