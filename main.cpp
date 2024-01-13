@@ -30,11 +30,11 @@ int main(int argc, char** argv){
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
             big_text("BIG ASS TEXT", 1)).c_str());
-            std::ifstream docs("./commands.txt");
-            std::string line;
-            while (getline(docs, line)){
-                std::system(("echo -e \"" + line + "\"").c_str());
-            }
+            //std::ifstream docs("./commands.txt");
+            //std::string line;
+            //while (getline(docs, line)){
+            //    std::system(("echo -e \"" + line + "\"").c_str());
+            //}
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
