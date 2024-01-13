@@ -89,7 +89,10 @@ std::string big_text(const std::string& input){
 
 int main(int argc, char** argv){
     
-    std::string out; //output
+    std::vector<std::string> out;
+
+    int z = 0; //element to stdout into vector
+
     for(int i=1; i<argc; i++){ //iterates over the argument list
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
@@ -98,22 +101,30 @@ int main(int argc, char** argv){
             "written in c++\n\"").c_str());
             return 0;
         }
-        out += argv[i];
-        out += " ";
+
+        //if first element or has newline 
+        //makes a new element and iterates to it
+        if (i ==1 || std::string(argv[i]).find("\n") != std::string::npos) {
+            out.push_back("");
+            z++;
+        }
+
+        out[z] += argv[i];
+        out[z] += " ";
         
     }
-    out.resize(out.size()-1); //removes last space
+    out[z].resize(out.size()-1); //removes last space
     
     
-    int iterate_time = (argv[argc]) ? std::atoi(argv[2]) : 0;
-    
-
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
     int i =0;
 
-    do{
-    std::system(("echo -e \"" + big_text(out) + "\"").c_str());
+    std::string text_output;
+    for(const std::string& out_str : out){
+        text_output += big_text(out_str);
+    }
+
+    std::system(("echo -e \"" + text_output + "\"").c_str());
     i++;
-    } while (i<iterate_time);
 }
