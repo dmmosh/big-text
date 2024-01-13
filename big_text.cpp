@@ -102,7 +102,7 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (argv[i][0] == '\\' && argv[i][1] == 'n') {
+        if (!strcmp(argv[i], "n")) {
             out.push_back("");
             continue;
         }
