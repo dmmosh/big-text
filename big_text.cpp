@@ -171,7 +171,7 @@ int main(int argc, char** argv){
 
 
     //copies the wanted amount of times
-    std::vector<std::string> final_out;
+    std::vector<std::string> final_out = {};
     while (repeat){
         final_out.insert(final_out.end(), out.begin(), out.end());
         repeat--;
