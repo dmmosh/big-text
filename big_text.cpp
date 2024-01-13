@@ -139,7 +139,7 @@ int main(int argc, char** argv){
             std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
             return 0;
         }
-
+        repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
         continue;
         // --times=
         } else if (!strncmp(argv[i], "--times=", 8)) {
@@ -147,7 +147,7 @@ int main(int argc, char** argv){
             std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
             return 0;
         }
-
+        repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
         continue;
         }
 
