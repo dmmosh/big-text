@@ -170,13 +170,14 @@ int main(int argc, char** argv){
     }
 
 
+    //copies the wanted amount of times
     std::vector<std::string> final_out = out;
     do{
         final_out.insert(final_out.end(), out.begin(), out.end());
         repeat--;
     } while (repeat);
 
-    for(std::string& out_str : out) {
+    for(std::string& out_str : final_out) {
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
 
