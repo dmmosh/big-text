@@ -102,7 +102,7 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (argv[i][0] == '\n') {
+        if (argv[i][0] == '\\' && argv[i][1] == 'n') {
             out.push_back("");
             continue;
         }
