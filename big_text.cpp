@@ -102,8 +102,9 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        if (i ==1 || !strcmp(argv[i], "hi")) {
+        if (i ==1 || !strcmp(argv[i], "\n")) {
             out.push_back("");
+            continue;
         }
 
         out.back() += argv[i];
