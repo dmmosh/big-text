@@ -30,7 +30,7 @@ int main(int argc, char** argv){
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
-            out.back().resize(out.back().size() -1); //removes the space
+            //out.back().resize(out.back().size() -1); //removes the space
             out.push_back(""); //pushes a new element
         // -nl, --no-lines
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
