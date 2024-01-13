@@ -111,7 +111,7 @@ int main(int argc, char** argv){
     
     std::vector<std::string> out = {""};
     bool line = 1; //whether to have a line or not
-    int repeat = 0; //whether to repeat or not
+    int repeat = 1; //whether to repeat or not
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
 
@@ -171,7 +171,7 @@ int main(int argc, char** argv){
 
 
     //copies the wanted amount of times
-    std::vector<std::string> final_out = out;
+    std::vector<std::string> final_out;
     while (repeat){
         final_out.insert(final_out.end(), out.begin(), out.end());
         repeat--;
