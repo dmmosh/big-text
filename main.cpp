@@ -53,17 +53,18 @@ int main(int argc, char** argv){
 
         //if first element or has newline 
         //makes a new element and iterates to it
-        
-
+    
         out.back() += argv[i];
         out.back() += " ";
         }
     }
 
+    /*
     //remove space from last element
     if(out.back().length()){
         out.back().resize(out.back().size() -1);
     }
+    */
 
 
     //copies the wanted amount of times
