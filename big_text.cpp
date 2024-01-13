@@ -139,12 +139,16 @@ int main(int argc, char** argv){
             std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
             return 0;
         }
+
+        continue;
         // --times=
         } else if (!strncmp(argv[i], "--times=", 6)) {
         if(!is_int(argv[i], 6)) {
             std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
             return 0;
         }
+
+        continue;
         }
 
         //if first element or has newline 
