@@ -104,7 +104,7 @@ int main(int argc, char** argv){
     out.resize(out.size()-1); //removes last space
     
     
-    int iterate_time = (argv[argc]) ? std::atoi(argv[2]) : 0;
+    int iterate_time = (argv[argc-1]) ? std::atoi(argv[2]) : 0;
     
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
