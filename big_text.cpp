@@ -90,7 +90,7 @@ int main(int argc, char** argv){
     
     std::string out; //output
     for(int i=1; i<argc; i++){ //iterates over the argument list
-        if(!strcmp(argv[i], "--help")) {
+        if(!strcmp(argv[i], "--help") || strcmp(argv[i], "-h")) {
             std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
             "by Dmytro Moshkovskyi\n" +
             "function from Inficonnect4 made for a terminal executable\n" +
@@ -104,8 +104,9 @@ int main(int argc, char** argv){
     out.resize(out.size()-1); //removes last space
     
     
-    int iterate_time = (argv[2]) ? std::atoi(argv[2]) : 0;
+    int iterate_time = (argv[argc]) ? std::atoi(argv[2]) : 0;
     
+
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
     int i =0;
