@@ -1,3 +1,5 @@
+#include <boost/archive/text_oarchive.hpp> //serialization
+#include <boost/archive/text_iarchive.hpp> //deserialization
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -109,6 +111,8 @@ bool is_int(const char* string, int start_i=0) {
 
 int main(int argc, char** argv){
     
+    
+
     std::vector<std::string> out = {""};
     bool line = 1; //whether to have a line or not
     int repeat = 1; //whether to repeat or not
@@ -118,11 +122,8 @@ int main(int argc, char** argv){
         // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
             std::system(("echo -e \"OVERVIEW:\n" + 
-            big_text("BIG ASS TEXT", 1) + 
-            "by Dmytro Moshkovskyi\n" +
-            "function from Inficonnect4\n" +
-            "made for a terminal executable\n" +
-            "written in c++\n\"").c_str());
+            big_text("BIG ASS TEXT", 1)).c_str());
+
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
