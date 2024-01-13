@@ -89,20 +89,24 @@ std::string big_text(const std::string& input){
 
 int main(int argc, char** argv){
     
-    
-    
-    if(!strcmp(argv[1], "--help")) {
-        std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
-        "by Dmytro Moshkovskyi\n" +
-        "function from Inficonnect4 made for a terminal executable\n" +
-        "written in c++\n\"").c_str());
-        return 0;
+    std::string out;
+    for(int i=0; i<argc; i++){
+        if(!strcmp(argv[i], "--help")) {
+            std::system(("echo -e \"" + big_text("BIG ASS TEXT") + 
+            "by Dmytro Moshkovskyi\n" +
+            "function from Inficonnect4 made for a terminal executable\n" +
+            "written in c++\n\"").c_str());
+            return 0;
+        }
+        
     }
+    
+    int iterate_time = (isdigit(std::atoi(argv[argc]))) ? std::atoi(argv[2]) : 0;
+    
     
     
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
-    int iterate_time = (argv[2]) ? std::atoi(argv[2]) : 0;
     int i =0;
 
     do{
