@@ -133,22 +133,25 @@ int main(int argc, char** argv){
         } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
             line = 0; //removes lines
             continue;
+        
         // -x=
         } else if(!strncmp(argv[i], "-x=", 3)) {
-        if(!is_int(argv[i], 3)) {
-            std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
-            return 0;
-        }
-        repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
-        continue;
+            if(!is_int(argv[i], 3)) {
+                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+                return 0;
+            }
+            repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
+            continue;
+
         // --times=
         } else if (!strncmp(argv[i], "--times=", 8)) {
-        if(!is_int(argv[i], 8)) {
-            std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
-            return 0;
-        }
-        repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
-        continue;
+            if(!is_int(argv[i], 8)) {
+                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+                return 0;
+            }
+            repeat = std::stoi(std::string(argv[i]).substr(8)); //sets to the repeat value
+            continue;
+        
         }
 
         //if first element or has newline 
@@ -166,10 +169,14 @@ int main(int argc, char** argv){
     }
 
 
+    do{
     for(std::string& out_str : out) {
         out_str = big_text(out_str, line);
         std::system(("echo -e \"" + out_str + "\"").c_str());
     }
+    repeat--;
+    } while(repeat) //clears the repeat value
+
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
 
