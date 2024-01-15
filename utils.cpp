@@ -91,14 +91,7 @@ bool is_int(const char* string, int start_i=0) {
 //prints the help page
 void help(std::string path) {
 
-    //the executable dir
-    //starts after the first slash
-    int i =path.length()-2;
-    while(i){
-        if(path[i] == '\\')
-            break;
-        i++;
-    }
+    
     path.resize(4);
     std::cout<<path;
 
