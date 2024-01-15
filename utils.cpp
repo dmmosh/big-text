@@ -89,14 +89,7 @@ bool is_int(const char* string, int start_i=0) {
 }
 
 //prints the help page
-void help(std::string& path) {
-
-    for(int i=path.length(); i>=0; i--){
-        if(path[i] == '/'){
-            path.resize(i+1);
-            break;
-        }       
-    }
+void help() {
     
     std::cout<<path;
 

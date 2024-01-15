@@ -12,7 +12,17 @@ TODO: add support for more big text
 
 
 int main(int argc, char** argv){
-    std::string path = argv[0];
+
+    //gets the path of executable 
+    static std::string path = argv[0];
+
+    for(int i=path.length(); i>=0; i--){
+        if(path[i] == '/'){
+            path.resize(i+1);
+            break;
+        }       
+    };
+
 
     if(argc == 1) {
         help(path);
