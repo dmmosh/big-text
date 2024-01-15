@@ -92,7 +92,7 @@ bool is_int(const char* string, int start_i=0) {
 void help(std::string& path) {
 
     for(int i=path.length()-1; i>=0; i--){
-        if(path[i] == '\\'){
+        if(path[i] == '/'){
             path.resize(i);
             break;
         }       
