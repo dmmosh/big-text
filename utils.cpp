@@ -92,7 +92,6 @@ bool is_int(const char* string, int start_i=0) {
 void help(std::string path) {
 
     
-    path.resize(4);
     std::cout<<path;
 
     std::system(("echo -e \"OVERVIEW:\n" + 
