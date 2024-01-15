@@ -96,7 +96,7 @@ void help(const char* executable_path) {
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("MASSIVE TEXT", 1) + "\"").c_str());
     std::ifstream docs(std::string(executable_path) + "/commands.txt");
-
+    std::cout << executable_path;
     std::string line;
     while (getline(docs, line)){
 
