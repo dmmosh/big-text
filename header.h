@@ -5,6 +5,7 @@
 #include <string>
 #include <string.h>
 #include <fstream>
+#include <filesystem>
 #define N '\n'
 
 //converts to BIG text
