@@ -88,7 +88,7 @@ bool is_int(const char* string, int start_i=0) {
     return true;
 }
 
-//prints the help page
+//prints the help page erf
 void help(const std::string& path) {
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("massive text", 1) + 
