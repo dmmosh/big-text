@@ -97,9 +97,7 @@ void help(const std::string& path) {
     big_text("MASSIVE TEXT", 1) + "\"").c_str());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
-
     while (getline(docs, line)){
-
         std::system(("echo -e \"" + line + "\"").c_str());
     }
 }
