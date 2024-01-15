@@ -93,7 +93,7 @@ void help(const std::string& path) {
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("massive text", 1) + 
     N + 
-    big_text("... ginormous even", 0) +
+    big_text("...ginormous even", 0) +
     "\"").c_str());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
