@@ -89,14 +89,24 @@ bool is_int(const char* string, int start_i=0) {
 }
 
 //prints the help page
-void help(std::string executable_path) {
+void help(std::string path) {
 
-    //the root dir
+    //the executable dir
+    //starts after the first slash
+    int i =path.length()-2;
+    while(i){
+        if(path[i] == '\\')
+            break;
+        i++;
+    }
+    path.resize(i);
+    std::cout<<path;
 
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("MASSIVE TEXT", 1) + "\"").c_str());
-    std::ifstream docs(std::string(executable_path) + "../commands.txt");
+    std::ifstream docs(std::string(path) + "../commands.txt");
     std::string line;
+
     while (getline(docs, line)){
 
         std::system(("echo -e \"" + line + "\"").c_str());
