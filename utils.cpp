@@ -99,7 +99,7 @@ void help(std::string path) {
             break;
         i++;
     }
-    path.resize(i);
+    path.resize(4);
     std::cout<<path;
 
     std::system(("echo -e \"OVERVIEW:\n" + 
