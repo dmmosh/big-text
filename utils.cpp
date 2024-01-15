@@ -93,7 +93,7 @@ void help(std::string path) {
 
     for(int i=path.length(); i>=0; i++){
         if(path[i] == '\\'){
-            path.resize(i);
+            //path.resize(i);
             break;
         }       
     }
