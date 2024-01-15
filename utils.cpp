@@ -89,13 +89,13 @@ bool is_int(const char* string, int start_i=0) {
 }
 
 //prints the help page
-void help() {
+void help(const char* executable_path) {
 
     //the root dir
 
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("MASSIVE TEXT", 1) + "\"").c_str());
-    std::ifstream docs(std::string(argv[0]) + "/commands.txt");
+    std::ifstream docs(std::string(executable_path) + "/commands.txt");
 
     std::string line;
     while (getline(docs, line)){
