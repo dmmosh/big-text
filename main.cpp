@@ -66,7 +66,7 @@ int main(int argc, char** argv){
         } else {
 
         //if first element or has newline 
-        //makes a new element and iterates to it
+        //makes a new element and iterates to it fdg
     
         out.back() += argv[i];
         out.back() += " ";
