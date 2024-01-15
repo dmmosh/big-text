@@ -95,7 +95,7 @@ void help() {
 
     std::system(("echo -e \"OVERVIEW:\n" + 
     big_text("MASSIVE TEXT", 1) + "\"").c_str());
-    std::ifstream docs("./commands.txt");
+    std::ifstream docs(std::string(argv[0]) + "/commands.txt");
 
     std::string line;
     while (getline(docs, line)){
