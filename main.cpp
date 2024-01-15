@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 
 
     if(argc == 1) {
-        help();
+        help(path);
         return 0;
     }
     
@@ -38,7 +38,7 @@ int main(int argc, char** argv){
 
         // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
-            help();
+            help(path);
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {

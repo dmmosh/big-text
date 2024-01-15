@@ -23,4 +23,4 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
     return out << N;
 }
 
-void help();
+void help(const std::string& path);
