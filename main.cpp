@@ -13,7 +13,7 @@ TODO: add support for more big text
 
 int main(int argc, char** argv){
     if(argc == 1) {
-        help(argv[0]);
+        help(std::string(argv[0]));
         return 0;
     }
     
@@ -26,7 +26,7 @@ int main(int argc, char** argv){
 
         // -h, --help
         if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
-            help(argv[0]);
+            help(std::string(argv[0]));
             return 0;
         // -n, --newline
         } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
