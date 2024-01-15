@@ -91,7 +91,9 @@ bool is_int(const char* string, int start_i=0) {
 //prints the help page
 void help(const std::string& path) {
     std::system(("echo -e \"OVERVIEW:\n" + 
-    big_text("MASSIVE TEXT", 1) + "\"").c_str());
+    big_text("massive text", 1) + 
+    big_text("... ginormous even", 0) +
+    "\"").c_str());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
