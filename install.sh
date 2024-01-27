@@ -7,7 +7,7 @@ read -p "What does above text say?  " check
 
 if [ ! "${check^^}" == "PINEAPPLE" ] 
 then
-    echo -e "Can't have cool text if you can't see it.\nChances are your terminal is not currently enabled with UTF-8 character encoding.\n"
+    echo -e "\nCan't have cool text if you can't see it.\nChances are your terminal is not currently enabled with UTF-8 character encoding.\n"
     exit 1
 fi
 
