@@ -13,8 +13,26 @@ TODO: add support for more big text
 
 int main(int argc, char** argv){
 
+    
     //gets the path of executable 
     static std::string path = argv[0];
+
+    char hi[] = "Nigger";
+    *(*(hi+i)+j) = 'p';
+
+    // fesdhuifdhku
+    hi[i][j] = 'p';
+
+    (hi+i) = 'p';
+
+
+    int arr[4] = {8, 2, 6 ,7};
+    
+
+    int poop = 2000;
+    int* fart = &poop;
+    *fart = 4;
+
 
     for(int i=path.length(); i>=0; i--){
         if(path[i] == '/'){

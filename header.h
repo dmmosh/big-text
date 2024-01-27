@@ -20,7 +20,7 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
     for(T out_var: input){
         out << out_var;
     }
-    return out << N;
+    return out << N; 
 }
 
 void help(const std::string& path);
