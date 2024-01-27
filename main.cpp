@@ -89,7 +89,7 @@ int main(int argc, char** argv){
         repeat--;
     };
 
-    //prints the big text
+    //prints the big textgfdfg
     for(std::string& out_str : final_out) {
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
