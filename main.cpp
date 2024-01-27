@@ -93,7 +93,7 @@ int main(int argc, char** argv){
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
 
-    std::cout << exec("$(stty -a <\"$terminal\" | grep -Po '(?<=columns )\d+')") << N << exec("$(stty -a <\"$terminal\" | grep -Po '(?<=rows )\d+')");
+    std::cout << exec("echo hi");
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
