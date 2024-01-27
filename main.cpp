@@ -17,23 +17,6 @@ int main(int argc, char** argv){
     //gets the path of executable 
     static std::string path = argv[0];
 
-    char hi[] = "Nigger";
-    *(*(hi+i)+j) = 'p';
-
-    // fesdhuifdhku
-    hi[i][j] = 'p';
-
-    (hi+i) = 'p';
-
-
-    int arr[4] = {8, 2, 6 ,7};
-    
-
-    int poop = 2000;
-    int* fart = &poop;
-    *fart = 4;
-
-
     for(int i=path.length(); i>=0; i--){
         if(path[i] == '/'){
             path.resize(i+1);
@@ -105,9 +88,12 @@ int main(int argc, char** argv){
         repeat--;
     };
 
+    //prints the big text
     for(std::string& out_str : final_out) {
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
+
+    std::cout << exec("stty -a <\"$terminal\" | grep -Po '(?<=columns )\d+'") << N << exec("stty -a <\"$terminal\" | grep -Po '(?<=rows )\d+'");
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;

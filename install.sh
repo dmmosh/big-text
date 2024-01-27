@@ -1,42 +1,27 @@
 #!/bin/bash
 
 
-echo -e '\n\n█▀█ █ █▄ █ █▀▀ ▄▀█ █▀█ █▀█ █   █▀▀\n█▀▀ █ █ ▀█ ██▄ █▀█ █▀▀ █▀▀ █▄▄ ██▄\n'
-check=""
-read -p "What does above text say?  " check 
+# BIG TEXT INSTALL SCRIPT
+# DONT TOUCH THIS
 
-if [ ! "${check^^}" == "PINEAPPLE" ] 
+if [[ ! "$(echo $LANG)" == *"UTF-8"* ]]
 then
-    echo -e "\nCan't have cool text if you can't see it.\nChances are your terminal is not currently enabled with UTF-8 character encoding.\nOr you had a typo."
+    echo -e "SUPER ERROR\nYour terminal is not currently running UTF-8 character encoding. Change your character encoding to UTF-8 and rerun this script.\n"
     exit 1
 fi
 
-if [ -f /etc/os-release ]; then
-    # freedesktop.org and systemd
-    . /etc/os-release
-    OS=$NAME
-    VER=$VERSION_ID
-elif type lsb_release >/dev/null 2>&1; then
-    # linuxbase.org
-    OS=$(lsb_release -si)
-    VER=$(lsb_release -sr)
-elif [ -f /etc/lsb-release ]; then
-    # For some versions of Debian/Ubuntu without lsb_release command
-    . /etc/lsb-release
-    OS=$DISTRIB_ID
-    VER=$DISTRIB_RELEASE
-elif [ -f /etc/debian_version ]; then
-    # Older Debian/Ubuntu/etc.
-    OS=Debian
-    VER=$(cat /etc/debian_version)
-elif [ -f /etc/SuSe-release ]; then
-    # Older SuSE/etc.
-    ...
-elif [ -f /etc/redhat-release ]; then
-    # Older Red Hat, CentOS, etc.
-    ...
-else
-    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
-    OS=$(uname -s)
-    VER=$(uname -r)
+# checks if can see the text
+echo -e '\n\n█▀█ █ █▄ █ █▀▀ ▄▀█ █▀█ █▀█ █   █▀▀\n█▀▀ █ █ ▀█ ██▄ █▀█ █▀▀ █▀▀ █▄▄ ██▄\n'
+
+
+
+if [ -z "$(gcc -v --help 2> /dev/null | sed -n '/^ *-std=\([^<][^ ]\+\).*/ {s//\1/p}' | grep c++11)" ] 
+then
+    echo -e "No g++11 found."
 fi
+
+terminal=/dev/pts/1
+columns=$(stty -a <"$terminal" | grep -Po '(?<=columns )\d+')
+rows=$(stty -a <"$terminal" | grep -Po '(?<=rows )\d+')
+
+echo $columns $rows
