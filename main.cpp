@@ -93,7 +93,7 @@ int main(int argc, char** argv){
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());
     }
 
-    std::cout << exec("echo hi");
+    std::cout << exec("stty size | awk '{print $2}'");
 
     // ARGV LIST IS THE PARAMTERS TO THE EXECUTABLE!!
     //std::cout << argv[1] << N;
