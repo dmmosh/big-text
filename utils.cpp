@@ -41,8 +41,8 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
+
                 break;
-            
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
@@ -66,10 +66,9 @@ std::string big_text(const std::string& input, const bool& have_lines){
     
     //adds the lines
     if(have_lines){
-        while(char_ctr){
+        for(size_t i=0; i<char_ctr; i++){
             top_line += "▀";
             bottom_line += "▄";
-            char_ctr--;
         }
         top_line += N;
         bottom_line += N;
