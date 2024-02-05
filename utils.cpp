@@ -70,7 +70,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
             case ' ':  top += ' '; bottom += ' '; char_str++; break;
             case '!': top += "█"; bottom += "▄"; char_str++; break;
             case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
-            default: skip=true; continue; //skips any and all other characters
+            default: skip=true; //skips any and all other characters
         }
         if(skip){
             continue;
