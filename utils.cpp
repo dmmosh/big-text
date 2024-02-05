@@ -45,26 +45,26 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
-                char_str++;
+                char_str+= 3;
                 break;
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
                 bottom+= bottom_big[(int)c-22];
-                char_str++;
+                char_str+= 3;
                 break;
 
             //special characters
-            case '.':  top += ' '; bottom += "▄"; break;
-            case '\'': top += "▀"; bottom += ' '; break;
-            case '-': top += "▄▄"; bottom += "  "; break;
-            case ' ':  top += ' '; bottom += ' '; break;
-            case '!': top += "█"; bottom += "▄"; break;
-            case '?': top += "▀█"; bottom += " ▄"; break;
+            case '.':  top += ' '; bottom += "▄"; char_str++; break;
+            case '\'': top += "▀"; bottom += ' '; char_str++; break;
+            case '-': top += "▄▄"; bottom += "  "; char_str+=2; break;
+            case ' ':  top += ' '; bottom += ' '; char_str++; break;
+            case '!': top += "█"; bottom += "▄"; char_str++; break;
+            case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
             default: continue; //skips any and all other characters
         }
         //adds separator
-        char_str +=3; //3 chars + space 
+        char_str++; //3 chars + space 
         top += ' ';
         bottom += ' ';
     }
@@ -78,7 +78,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
         top_line += N;
         bottom_line += N;
     }
-    
+
 
     top.resize(top.size() - 1);
     bottom.resize(bottom.size() - 1);
