@@ -32,6 +32,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     std::string top; 
     std::string bottom;
     std::string bottom_line;
+    int char_ctr = 0;
 
 
     for(const char c: input){
@@ -40,12 +41,14 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
+                char_ctr++; //space 
                 break;
             
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
                 bottom+= bottom_big[(int)c-22];
+                char_ctr++; //space 
                 break;
 
             //special characters
@@ -58,16 +61,21 @@ std::string big_text(const std::string& input, const bool& have_lines){
             default: continue; //skips any and all other characters
         }
         //adds separator
+        char_ctr +=3; //3 chars + space 
         top += ' ';
         bottom += ' ';
     }
 
     
     //adds the lines
-    for(int i=0; i<top.size()/2; ++i){
+    while(char_ctr){
         top_line += "▀";
         bottom_line += "▄";
+        char_ctr--;
     }
+
+    int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+
 
     //returns the fat string
     return 
