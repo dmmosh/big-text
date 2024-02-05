@@ -6,6 +6,8 @@
 std::string big_text(const std::string& input, const bool& have_lines){
     static int char_ctr = 0; //counter of characters 
     int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+
+    std::cout << char_ctr << N << t_cols << N;
     if(!input.length() || char_ctr > t_cols){
         char_ctr = 0;
         return "\n";
