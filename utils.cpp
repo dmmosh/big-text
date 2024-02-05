@@ -73,6 +73,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
             default: skip=true; //skips any and all other characters
         }
         if(skip){
+            skip=false;
             continue;
         }
 
