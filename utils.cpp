@@ -5,8 +5,8 @@
 //string as value because it might be modified
 std::string big_text(const std::string& input, const bool& have_lines){
     static unsigned int char_ctr = 0; //counter of characters 
-    int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
-    if(!input.length()){
+    unsigned int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+    if(!input.length() || char_ctr > t_cols){
         char_ctr = 0;
         return "\n";
     }
