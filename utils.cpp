@@ -89,7 +89,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
     //adds the lines
     if(have_lines){
-        for(size_t i=0; i<char_str-1; i++){
+        for(size_t i=0; i<char_str; i++){
             top_line += "▀";
             bottom_line += "▄";
         }
