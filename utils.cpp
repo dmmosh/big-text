@@ -32,7 +32,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     std::string top; 
     std::string bottom;
     std::string bottom_line ="";
-    static unsigned int char_ctr = 0;
+    static unsigned int char_ctr = 0; //counter of characters 
 
 
     for(const char c: input){
@@ -41,14 +41,12 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
-                char_ctr++; //space 
                 break;
             
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
                 bottom+= bottom_big[(int)c-22];
-                char_ctr++; //space 
                 break;
 
             //special characters
@@ -68,11 +66,11 @@ std::string big_text(const std::string& input, const bool& have_lines){
     
     //adds the lines
     if(have_lines){
-    while(char_ctr){
-        top_line += "▀";
-        bottom_line += "▄";
-        char_ctr--;
-    }
+        while(char_ctr){
+            top_line += "▀";
+            bottom_line += "▄";
+            char_ctr--;
+        }
         top_line += N;
         bottom_line += N;
     }
