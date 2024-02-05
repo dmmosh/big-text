@@ -37,7 +37,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
 
     for(const char c: input){
-
+        bool skip = false;
         switch(tolower(c)){
             //letters
             case 'a' ... 'z': 
@@ -70,8 +70,12 @@ std::string big_text(const std::string& input, const bool& have_lines){
             case ' ':  top += ' '; bottom += ' '; char_str++; break;
             case '!': top += "█"; bottom += "▄"; char_str++; break;
             case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
-            default: char_str++; continue; //skips any and all other characters
+            default: skip=true; continue; //skips any and all other characters
         }
+        if(skip){
+            continue;
+        }
+
         //adds separator
         char_str++; //3 chars + space 
         top += ' ';
