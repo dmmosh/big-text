@@ -4,7 +4,7 @@
 //converts to BIG text
 //string as value because it might be modified
 std::string big_text(const std::string& input, const bool& have_lines){
-    static int char_ctr = 0; //counter of characters 
+    static int char_ctr; //counter of characters 
     int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
     std::cout << char_ctr << N << t_cols << N;
