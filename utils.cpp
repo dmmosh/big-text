@@ -28,11 +28,11 @@ std::string big_text(const std::string& input, const bool& have_lines){
     };
 
     //outputs
-    std::string top_line;
+    std::string top_line ="";
     std::string top; 
     std::string bottom;
-    std::string bottom_line;
-    int char_ctr = 0;
+    std::string bottom_line ="";
+    static unsigned int char_ctr = 0;
 
 
     for(const char c: input){
@@ -65,24 +65,24 @@ std::string big_text(const std::string& input, const bool& have_lines){
         top += ' ';
         bottom += ' ';
     }
-    std::cout <<char_ctr << N;
     
     //adds the lines
+    if(have_lines){
     while(char_ctr){
         top_line += "▀";
         bottom_line += "▄";
         char_ctr--;
     }
+        top_line += N;
+        bottom_line += N;
+    }
 
     int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+    std::cout <<char_ctr << N;
 
 
     //returns the fat string
-    return 
-    ((have_lines) ? top_line + N : "") + 
-        top + N + bottom + N + 
-    ((have_lines) ? bottom_line + N : "");
-
+    return top_line + top + N + bottom + N + bottom_line;
 };
 
 std::string exec(const char* cmd) {
