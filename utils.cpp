@@ -8,6 +8,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
     int char_str = 0; //current string char counter
 
+
     if(!input.length()){
         char_ctr = 0;
         return "\n";
@@ -83,8 +84,8 @@ std::string big_text(const std::string& input, const bool& have_lines){
         top_line += N;
         bottom_line += N;
     }
-
-
+    char_ctr += char_str;
+    std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
     return top_line + top + N + bottom + N + bottom_line;
 };
