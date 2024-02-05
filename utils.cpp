@@ -65,7 +65,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
         top += ' ';
         bottom += ' ';
     }
-
+    std::cout <<char_ctr << N;
     
     //adds the lines
     while(char_ctr){
