@@ -6,6 +6,7 @@
 #include <string.h>
 #include <fstream>
 #include <filesystem>
+#include <array>
 #define N '\n'
 
 //converts to BIG text
