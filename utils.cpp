@@ -54,7 +54,11 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
                 bottom+= bottom_big[(int)c-22];
-                char_str+= 3;
+                switch(tolower(c)){
+                    case '1': case '2': case '5': char_str+=2; break;
+                    case '8': char_str +=4; break;
+                    defualt: char_str +=3;
+                }
                 break;
 
             //special characters
