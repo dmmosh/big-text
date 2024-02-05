@@ -78,7 +78,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     }
 
     top.resize(top.size() - 1);
-    bottom.resize(top.size() - 1);
+    bottom.resize(bottom.size() - 1);
 
 
     //returns the fat string
