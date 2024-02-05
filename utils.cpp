@@ -39,6 +39,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     for(const char c: input){
 
         switch(tolower(c)){
+            //letters
             case 'a' ... 'z': 
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
@@ -50,6 +51,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
                     default: char_str+=3;  
                 }
                 break;
+            //numbers
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
@@ -68,7 +70,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
             case ' ':  top += ' '; bottom += ' '; char_str++; break;
             case '!': top += "█"; bottom += "▄"; char_str++; break;
             case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
-            default: continue; //skips any and all other characters
+            default: char_str++; continue; //skips any and all other characters
         }
         //adds separator
         char_str++; //3 chars + space 
