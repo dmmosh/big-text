@@ -6,9 +6,6 @@
 #include <string.h>
 #include <fstream>
 #include <filesystem>
-#include <cstdio>
-#include <stdexcept>
-#include <array>
 #define N '\n'
 
 //converts to BIG text
@@ -31,3 +28,4 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
 }
 
 void help(const std::string& path);
+std::string exec(const char* cmd);

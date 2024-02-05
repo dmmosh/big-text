@@ -81,6 +81,8 @@ int main(int argc, char** argv){
         out.back().resize(out.back().size() -1);
     }
 
+    int terminal_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+    std::cout << terminal_cols << N;
 
     //copies the wanted amount of times
     std::vector<std::string> final_out;
