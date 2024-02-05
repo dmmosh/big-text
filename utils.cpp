@@ -5,7 +5,7 @@
 //string as value because it might be modified
 std::string big_text(const std::string& input, const bool& have_lines){
     static unsigned int char_ctr = 0; //counter of characters 
-    
+
     if(!input.length()){
         char_ctr = 0;
         return "\n";
@@ -78,7 +78,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
     }
 
     int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
-    std::cout <<char_ctr << N;
+    std::cout <<char_ctr << N << t_cols << N;
 
 
     //returns the fat string
