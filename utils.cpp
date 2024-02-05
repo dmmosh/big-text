@@ -37,12 +37,18 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
 
     for(const char c: input){
+
         switch(tolower(c)){
             case 'a' ... 'z': 
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
-                char_str+= 3;
+                switch(tolower(c)){
+                    case 'i': char_str++; break;
+                    case 'm': case 'w': char_str+=5; break;
+                    case 's': case 'z': char_str+=2; break;
+                    default: char_str+=3;  
+                }
                 break;
             case '0' ... '9':
                 //decimal - 48 + 26
