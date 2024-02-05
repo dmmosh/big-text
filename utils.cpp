@@ -57,7 +57,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 switch(tolower(c)){
                     case '1': case '2': case '5': char_str+=2; break;
                     case '8': char_str +=4; break;
-                    defualt: char_str +=3;
+                    default: char_str +=3;
                 }
                 break;
 
