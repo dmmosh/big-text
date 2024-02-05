@@ -69,20 +69,20 @@ std::string big_text(const std::string& input, const bool& have_lines){
         bottom += ' ';
     }
     
+
+
+    top.resize(top.size() - 1);
+    bottom.resize(bottom.size() - 1);
+
     //adds the lines
     if(have_lines){
-        for(size_t i=0; i<char_str-1; i++){
+        for(size_t i=0; i<top.size(); i++){
             top_line += "▀";
             bottom_line += "▄";
         }
         top_line += N;
         bottom_line += N;
     }
-
-
-    top.resize(top.size() - 1);
-    bottom.resize(bottom.size() - 1);
-
 
 
     //returns the fat string
