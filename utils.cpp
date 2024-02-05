@@ -41,12 +41,13 @@ std::string big_text(const std::string& input, const bool& have_lines){
                 //appends the big version strings of each
                 top += top_big[(int)tolower(c)-97];
                 bottom += bottom_big[(int)tolower(c)-97];
-
+                char_ctr++;
                 break;
             case '0' ... '9':
                 //decimal - 48 + 26
                 top+= top_big[(int)c-22];
                 bottom+= bottom_big[(int)c-22];
+                char_ctr++;
                 break;
 
             //special characters
