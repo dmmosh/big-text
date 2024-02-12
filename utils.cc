@@ -181,8 +181,7 @@ void help(const char* path) {
     };
 
     sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
-    sys(
-    "\n OVERVIEW:" +
+    sys("\n OVERVIEW:" +
     "\n Big Terminal Text" +
     "\n By Dmytro Moshkovskyi" +
     "\n https://github.com/wettestsock/big-text" +
