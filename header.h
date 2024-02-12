@@ -12,9 +12,6 @@
 
 
 class btxt{
-    private:
-    static const std::vector<std::string> top_big;
-    static const std::vector<std::string> bottom_big;
 
     public:
     std::string top_line; //top line
@@ -23,6 +20,8 @@ class btxt{
     std::string bottom_line; //bottom line
     
     int char_str; //the character counter (utf 8 characters are weird in c)
+    static const std::vector<std::string> top_big;
+    static const std::vector<std::string> bottom_big;
 
     btxt(const std::string& input, const bool& have_lines);
     std::string to_string();
