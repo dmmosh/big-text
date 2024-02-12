@@ -187,10 +187,10 @@ void help(const char* path) {
     sys("https://github.com/wettestsock/big-text" );
     sys("Function from Inficonnect4 made for a terminal executable" );
     sys("written in C++ ");
-    sys("USAGE: " );
+    sys("\nUSAGE: " );
     sys("    btxt [options] text ..." );
     sys("" );
-    sys("OPTIONS:" );
+    sys("\nOPTIONS:" );
     sys("    -h, --help          help page" );
     sys("    -n, --newline       prints following text in a newline" );
     sys("    -nl, --no-lines     removes the top and bottom lines, enabled by default" );
