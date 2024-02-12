@@ -97,8 +97,9 @@ int main(int argc, char** argv){
         
         if (out.top == "\n") { //if -n or --newline
             char_ctr = 0;
-        } 
-        else if (char_ctr > t_cols)
+        }
+         
+        if (char_ctr > t_cols)
         {
             final_out += "\n BAD STUFF\n";
             char_ctr = 0;
