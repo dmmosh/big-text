@@ -71,7 +71,7 @@ int main(int argc, char** argv){
         //makes a new element and iterates to it fdg
     
         //out.back() += argv[i];
-        out.push_back(argv[i]);
+        out.push_back(std::string(argv[i]));
         out.push_back(" ");
         }
     }
