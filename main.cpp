@@ -16,7 +16,7 @@ int main(int argc, char** argv){
     static std::vector<std::string> arg_input;
     for (size_t i = 0; i < argc; i++)
     {
-        arg_input.push_back(arg_input[i]);
+        arg_input.push_back(argv[i]);
     }
     
     
