@@ -97,6 +97,7 @@ int main(int argc, char** argv){
         if (char_ctr > t_cols)
         {
             sys("ASASDSAJLKDSJLDSF");
+            char_ctr = 0;
         }
         final_out += out.to_str();
     }
