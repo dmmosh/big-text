@@ -46,7 +46,7 @@ char_str(0)
 {
     //operator overloading and stuff
     for(const char& c: input){
-        *this += c;
+        *this = *this + c;
     }
 };
 
@@ -116,7 +116,6 @@ btxt btxt::operator+(const char& c){
 
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
-    return *this;
 };
 
 
