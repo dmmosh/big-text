@@ -168,7 +168,8 @@ void help(const char* path) {
             break;
         }       
     };
-    sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
+    sys_btxt("massive text", 1, 1);
+    sys_btxt("...ginormous even", 1, 1);
 
     sys("OVERVIEW:" );
     sys("Big Terminal Text" );
@@ -188,12 +189,12 @@ void help(const char* path) {
 }
 
 void test(){
-    sys(btxt("the brown fox jumps over the lazy dog", 1).to_str());
-    sys(btxt("0123456789", 1).to_str());
-    sys(btxt(".,\\- !?", 1).to_str());
-    sys(btxt("the brown fox jumps over the lazy dog", 0).to_str());
-    sys(btxt("0123456789", 0).to_str());
-    sys(btxt(".,\\- !?", 0).to_str());
+    sys_btxt("the brown fox jumps over the lazy dog", 1, 1);
+    sys_btxt("0123456789", 1, 1);
+    sys_btxt(".,\\- !?", 1, 1);
+    sys_btxt("the brown fox jumps over the lazy dog", 0, 1);
+    sys_btxt("0123456789", 0, 1);
+    sys_btxt(".,\\- !?", 0, 1);
 }
 
 std::string exec(const char* cmd) {
