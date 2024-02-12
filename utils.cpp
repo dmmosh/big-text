@@ -50,6 +50,7 @@ char_str(0)
                     case 'i': char_str++; break;
                     case 'm': case 'w': char_str+=5; break;
                     case 's': case 'z': char_str+=2; break;
+                    case 'n': char_str+=4; break;
                     default: char_str+=3;  
                 }
                 break;
