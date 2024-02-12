@@ -7,14 +7,14 @@
 #include <fstream>
 #include <filesystem>
 #include <array>
-#include <stdlib.h>
-#include <string.h>
 #define N '\n'
 
 
 
 class btxt{
     public:
+    std::vector<std::string> top_big;
+    std::vector<std::string> bottom_big;
     std::string top_line; //top line
     std::string top; //top text
     std::string bottom; //bottom text
@@ -24,13 +24,13 @@ class btxt{
 
     btxt(const std::string& input, const bool& have_lines);
     std::string to_string();
-}
+};
 
 //converts to BIG text
 //string as value because it might be modified
 
 //executes command and returns the output
-std::string exec(const char* cmd) ;
+std::string exec(const char* cmd);
 
 
 // if string is an int

@@ -3,7 +3,34 @@
 
 //converts to BIG text
 //string as value because it might be modified
-btxt::btxt(const std::string& input, const bool& have_lines){
+// constructor
+btxt::btxt(const std::string& input, const bool& have_lines): 
+
+// member initialization list
+top_big(
+    {
+        "▄▀█", "█▄▄", "█▀▀", "█▀▄", "█▀▀", "█▀▀", "█▀▀", "█ █", "█", "  █", "█▄▀", "█  ", 
+        "█▀▄▀█", "█▄ █", "█▀█", "█▀█", "█▀█", "█▀█", "█▀", "▀█▀", "█ █", "█ █", "█ █ █", 
+        "▀▄▀", "█▄█", "▀█", 
+        
+        "█▀█", "▄█", "▀█", "▀▀█", "█ █", "█▀", "█▄▄", "▀▀█", "▄▀▀▄", "█▀█"
+    }
+),
+bottom_big(
+    {
+        "█▀█", "█▄█", "█▄▄", "█▄▀", "██▄", "█▀ ", "█▄█", "█▀█", "█", "█▄█", "█ █", "█▄▄", 
+        "█ ▀ █", "█ ▀█", "█▄█", "█▀▀", "▀▀█", "█▀▄", "▄█", " █ ", "█▄█", "▀▄▀", "▀▄▀▄▀", 
+        "█ █", " █ ", "█▄", 
+        
+        "█▄█", " █", "█▄", "▄▄█", "▀▀█", "▄█", "█▄█", "  █", "▀██▀", "▀▀█"
+    }
+),
+top_line(""),
+top(""),
+bottom(""),
+bottom_line(""),
+char_str(0)
+{
     
     //output struct
 
@@ -11,27 +38,6 @@ btxt::btxt(const std::string& input, const bool& have_lines){
         top = "\n"; //top is newline
         return;
     }
-
-    //TOP BIG LETTERS (match the bottom)
-    const std::vector<std::string> top_big = {
-        "▄▀█", "█▄▄", "█▀▀", "█▀▄", "█▀▀", "█▀▀", "█▀▀", "█ █", "█", "  █", "█▄▀", "█  ", 
-        "█▀▄▀█", "█▄ █", "█▀█", "█▀█", "█▀█", "█▀█", "█▀", "▀█▀", "█ █", "█ █", "█ █ █", 
-        "▀▄▀", "█▄█", "▀█", 
-        
-        "█▀█", "▄█", "▀█", "▀▀█", "█ █", "█▀", "█▄▄", "▀▀█", "▄▀▀▄", "█▀█"
-    };
-
-    //bottom BIG LETTERS (match the top)
-    //a - z and 0 -9 
-    const std::vector<std::string> bottom_big = {
-        "█▀█", "█▄█", "█▄▄", "█▄▀", "██▄", "█▀ ", "█▄█", "█▀█", "█", "█▄█", "█ █", "█▄▄", 
-        "█ ▀ █", "█ ▀█", "█▄█", "█▀▀", "▀▀█", "█▀▄", "▄█", " █ ", "█▄█", "▀▄▀", "▀▄▀▄▀", 
-        "█ █", " █ ", "█▄", 
-        
-        "█▄█", " █", "█▄", "▄▄█", "▀▀█", "▄█", "█▄█", "  █", "▀██▀", "▀▀█"
-    };
-
-    //outputs
 
 
     for(const char c: input){
@@ -97,11 +103,11 @@ btxt::btxt(const std::string& input, const bool& have_lines){
 
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
-    return out;
 };
 
+//converts variables to a string
 std::string btxt::to_string(){
-
+    return top_line+top+bottom+bottom_line;
 }
 
 std::string exec(const char* cmd) {
@@ -130,11 +136,10 @@ bool is_int(const char* string, int start_i=0) {
 
 //prints the help page erf
 void help(const std::string& path) {
-    std::system(("echo -e \"OVERVIEW:\n" + 
-    big_text("massive text", 1) + 
-    N + 
-    big_text("...ginormous even", 0) +
-    "\"").c_str());
+    btxt text1("massive text", 1);
+    btxt text2("...ginormous even", 0);
+
+    sys(N + text1.to_string() + text1.to_string());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
