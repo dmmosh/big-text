@@ -42,7 +42,8 @@ top_line(""),
 top(""),
 bottom(""),
 bottom_line(""),
-char_str(0)
+char_str(0),
+have_lines(have_lines) 
 {
     //operator overloading and stuff
     for(const char& c: input){
@@ -105,7 +106,8 @@ std::string btxt::to_str(){
             this->top_line += "▀";
             this->bottom_line += "▄";
         }
-        
+        this->top_line += N;
+        this->bottom_line += N;
     }
 
     return 
