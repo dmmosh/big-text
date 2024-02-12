@@ -25,15 +25,15 @@ int main(int argc, char** argv){
         }       
     };
 
-
+    //if no arguments are provided, just print the help page
     if(argc == 1) {
         help(path);
         return 0;
     }
     
 
-    std::vector<std::string> out = {""};
-    bool line = 1; //whether to have a line or not
+    std::vector<std::string> out = {""}; //output words, not big yet
+    bool line = 1; //whether to have a line or not, default 1
     int repeat = 1; //whether to repeat or notfdsf
 
     for(int i=1; i<argc; i++){ //iterates over the argument list
@@ -98,7 +98,15 @@ int main(int argc, char** argv){
     for(std::string& out_str : final_out) {
         btxt out(out_str, line);
 
-        sys(btxt(out_str, line).to_str());
+
+        char_ctr += out.char_str;
+        //if character counter is bigger than the number of columns
+        if (char_ctr > t_cols)
+        {
+            sys(btxt("", 0).to_str());
+            char_ctr = 0;
+        }
+        sys(out.to_str());
     }
 
     //terminal column char size
