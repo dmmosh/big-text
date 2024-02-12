@@ -180,6 +180,24 @@ void help(const char* path) {
         }       
     };
 
+    std::cout << "\n OVERVIEW:" <<
+    "\n Big Terminal Text" <<
+    "\n By Dmytro Moshkovskyi" <<
+    "\n https://github.com/wettestsock/big-text" <<
+    "\n " <<
+    "\n Function from Inficonnect4 made for a terminal executable" <<
+    "\n written in C++ " <<
+    "\n " <<
+    "\n USAGE: " <<
+    "\n     btxt [options] text ..." <<
+    "\n " <<
+    "\n OPTIONS:" <<
+    "\n     -h, --help          help page" <<
+    "\n     -n, --newline       prints following text in a newline" <<
+    "\n     -nl, --no-lines     removes the top and bottom lines, enabled by default" <<
+    "\n     -x=, --repeat=<value> repeats the text a given N times" <<
+    N;
+
     sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
     std::ifstream docs(std::string(path_input) + "commands.txt");
     std::string line;
