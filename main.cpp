@@ -96,7 +96,7 @@ int main(int argc, char** argv){
 
 
     for(std::string& out_str : final_out) {
-        sys("echo -e \"" + btxt(out_str, line).to_string() + "\"");
+        sys(btxt(out_str, line).to_str());
     }
 
     //terminal column char size
