@@ -125,7 +125,7 @@ std::string btxt::to_str(){
     
 
     //if include lines, print them 
-    if(this->have_lines){
+    if(this->have_lines && this->top_line.empty() && this->bottom_line.empty()){
         for (size_t i = 0; i < this->char_str-1; i++)
         {
             this->top_line += "▀";
