@@ -76,7 +76,7 @@ int main(int argc, char** argv){
     //iterate over characters in the output string
     int start_i = 0; //index the last space is in (default 0)
     for(const char& c: out){
-        if(big_out.back().char_str > t_cols || c == '\n'){
+        if(big_out.back().char_str-3 > t_cols || c == '\n'){
             big_out.push_back(btxt(line));
         } else {
             big_out.back() += c;
