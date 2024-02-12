@@ -93,9 +93,10 @@ int main(int argc, char** argv){
         char_ctr += out.char_str; //adds string's size to total char counter
 
         //if total chars above terminal's char counter, add a newline character
-        std::cout << out.char_str << N;
+        //std::cout << out.char_str -1 << N;
         if (char_ctr > t_cols)
         {
+            final_out += "\n BAD STUFF\n";
             char_ctr = 0;
         }
         final_out += out.to_str();
