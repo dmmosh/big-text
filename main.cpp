@@ -71,16 +71,15 @@ int main(int argc, char** argv){
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
 
-    std::vector<btxt> big_out = {}; //vector of big text classes
+    std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
 
     //iterate over characters in the output string
     int start_i = 0; //index the last space is in (default 0)
-    for(size_t i =0; i< out.length()+1; i++){
-        if (big_out.back().char_str > t_cols || out[i] == '\n' || big_out.empty())
-        {
+    for(const char& c: out){
+        if(big_out.back().char_str > t_cols || c == '\n'){
             big_out.push_back(btxt(line));
         } else {
-            big_out.back() += out[i];
+            big_out.back() += c;
         }
     }
 

@@ -122,6 +122,11 @@ btxt& btxt::operator+=(const char& c){
 //converts variables to a string
 std::string btxt::to_str(){
 
+    //if the big text is empty
+    if(this->top.empty() && this->bottom.empty()){
+        return "";
+    }
+
     //if include lines, print them 
     if(this->have_lines){
         for (size_t i = 0; i < this->char_str-1; i++)
