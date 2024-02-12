@@ -90,15 +90,17 @@ int main(int argc, char** argv){
     {
         btxt out(out_str, line);
 
-        char_ctr += out.char_str; //adds string's size to total char counter
+        if(out.char_str >= 0) {
+            char_ctr += out.char_str; //adds string's size to total char counter
+        }
+        else {
+            char_ctr = 0;
+        }
+
 
         //if total chars above terminal's char counter, add a newline character
         //std::cout << out.char_str -1 << N;
         
-        if (out.top == "\n") { //if -n or --newline
-            char_ctr = 0;
-        }
-         
         if (char_ctr > t_cols)
         {
             final_out += "\n BAD STUFF\n";

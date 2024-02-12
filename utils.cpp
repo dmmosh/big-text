@@ -34,6 +34,7 @@ char_str(0)
 
     if(!input.length()){
         top = "\n"; //top is newline
+        char_str = -1;
         return;
     }
 
