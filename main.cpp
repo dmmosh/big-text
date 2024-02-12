@@ -82,7 +82,6 @@ int main(int argc, char** argv){
     }
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
-    std::cout << t_cols;
 
     std::string final_out; //big text output for each parameter
     int char_ctr = 0; //counter of characters 
@@ -94,9 +93,9 @@ int main(int argc, char** argv){
         char_ctr += out.char_str; //adds string's size to total char counter
 
         //if total chars above terminal's char counter, add a newline character
+        std::cout << out.char_str << N;
         if (char_ctr > t_cols)
         {
-            std::cout << out.char_str << N;
             char_ctr = 0;
         }
         final_out += out.to_str();
