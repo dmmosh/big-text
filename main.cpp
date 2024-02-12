@@ -81,7 +81,33 @@ int main(int argc, char** argv){
         out.back().resize(out.back().size() -1);
     }
 
+    static int char_ctr = 0; //counter of characters 
+    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
+    std::string final_out; //big text output for each parameter
+
+    for(std::string out_str: out)
+    {
+        btxt out(out_str, line);
+
+        char_ctr += out.char_str; //adds string's size to total char counter
+
+        //if total chars above terminal's char counter, add a newline character
+        if (char_ctr > t_cols)
+        {
+            final_out += N;
+            char_ctr =0;
+        }
+        final_out += out.to_str();
+    }
+
+    while(repeat){
+        sys(final_out);
+        repeat--;
+    }
+    
+
+    /*
     //copies the wanted amount of times
     std::vector<std::string> final_out;
     while (repeat){
@@ -91,10 +117,7 @@ int main(int argc, char** argv){
 
     //prints the big textgfdfg
 
-    int char_ctr = 0; //counter of characters 
-    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
-
-    //actually prints the big text
+    //prints the big text (multiplied times)
     for(std::string& out_str : final_out) {
         btxt out(out_str, line);
 
@@ -104,6 +127,7 @@ int main(int argc, char** argv){
         std::cout << char_ctr << N;
         sys(out.to_str());
     }
+    */
 
     //terminal column char size
 
