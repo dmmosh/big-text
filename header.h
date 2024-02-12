@@ -60,6 +60,6 @@ void test(); //test the text
 
 std::string exec(const char* cmd); //executes the command
 
-void sys_btxt(const std::string& out, const bool& line, int repeat);
+void sys_btxt(const std::string& out, const bool& line, int repeat =1);
 
 void sys(const std::string& input);

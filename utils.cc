@@ -209,7 +209,7 @@ std::string exec(const char* cmd) {
     return result;
 }
 
-void sys_btxt(const std::string& out, const bool& line, int repeat){
+void sys_btxt(const std::string& out, const bool& line, int repeat = 1){
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
     std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
 
