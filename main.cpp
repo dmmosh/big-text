@@ -77,7 +77,7 @@ int main(int argc, char** argv){
         //if first element or has newline 
         //makes a new element and iterates to it fdg
     
-        out.push_back(std::string(arg_input[i]));
+        out.push_back(arg_input[i] + " ");
         }
     }
 
