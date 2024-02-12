@@ -18,8 +18,23 @@ const std::vector<std::string> btxt::bottom_big = {
 };
 
 //converts to BIG text
+//constructor 1
+btxt::btxt(const bool& have_lines): 
+
+// member initialization list
+top_line(""),
+top(""),
+bottom(""),
+bottom_line(""),
+char_str(0),
+have_lines(have_lines) 
+{};
+
+
+//converts to BIG text
 //string as value because it might be modified
-// constructor
+// constructor 2 
+// constructor overloading
 btxt::btxt(const std::string& input, const bool& have_lines): 
 
 // member initialization list
@@ -29,65 +44,63 @@ bottom(""),
 bottom_line(""),
 char_str(0)
 {
-    
-    //output struct
-
-    if(!input.length()){
-        top = "\n"; //top is newline
-        char_str = -1;
-        return;
+    //operator overloading and stuff
+    for(const char& c: input){
+        *this += c;
     }
+};
+
+//overloads += operator
+btxt& btxt::operator+=(const char& c){
+    *this = *this + c;
+    return *this;
+};
 
 
-    for(const char c: input){
-        bool skip = false;
-        switch(tolower(c)){
-            //letters
-            case 'a' ... 'z': 
-                //appends the big version strings of each
-                top += top_big[(int)tolower(c)-97];
-                bottom += bottom_big[(int)tolower(c)-97];
-                switch(tolower(c)){
-                    case 'i': char_str++; break;
-                    case 'm': case 'w': char_str+=5; break;
-                    case 's': case 'z': char_str+=2; break;
-                    case 'n': char_str+=4; break;
-                    default: char_str+=3;  
-                }
-                break;
-            //numbers
-            case '0' ... '9':
-                //decimal - 48 + 26
-                top+= top_big[(int)c-22];
-                bottom+= bottom_big[(int)c-22];
-                switch(tolower(c)){
-                    case '1': case '2': case '5': char_str+=2; break;
-                    case '8': char_str +=4; break;
-                    default: char_str +=3;
-                }
-                break;
+//adds a character
+//cant be newline, make sure that dont happen
+btxt btxt::operator+(const char& c){
 
-            //special characters
-            case '.':  top += ' '; bottom += "▄"; char_str++; break;
-            case '\'': top += "▀"; bottom += ' '; char_str++; break;
-            case '-': top += "▄▄"; bottom += "  "; char_str+=2; break;
-            case ' ':  top += ' '; bottom += ' '; char_str++; break;
-            case '!': top += "█"; bottom += "▄"; char_str++; break;
-            case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
-            default: skip=true; //skips any and all other characters
-        }
-        if(skip){
-            continue;
-        }
-
-        //adds separator
-        char_str++; //3 chars + space 
-        top += ' ';
-        bottom += ' ';
+    switch(tolower(c)){
+        //letters
+        case 'a' ... 'z': 
+            //appends the big version strings of each
+            top += top_big[(int)tolower(c)-97];
+            bottom += bottom_big[(int)tolower(c)-97];
+            switch(tolower(c)){
+                case 'i': char_str++; break;
+                case 'm': case 'w': char_str+=5; break;
+                case 's': case 'z': char_str+=2; break;
+                case 'n': char_str+=4; break;
+                default: char_str+=3;  
+            }
+            break;
+        //numbers
+        case '0' ... '9':
+            //decimal - 48 + 26
+            top+= top_big[(int)c-22];
+            bottom+= bottom_big[(int)c-22];
+            switch(tolower(c)){
+                case '1': case '2': case '5': char_str+=2; break;
+                case '8': char_str +=4; break;
+                default: char_str +=3;
+            }
+            break;
+        //special characters
+        case '.':  top += ' '; bottom += "▄"; char_str++; break;
+        case '\'': top += "▀"; bottom += ' '; char_str++; break;
+        case '-': top += "▄▄"; bottom += "  "; char_str+=2; break;
+        case ' ':  top += ' '; bottom += ' '; char_str++; break;
+        case '!': top += "█"; bottom += "▄"; char_str++; break;
+        case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
+        default: return; //skips any and all other characters
     }
     
-
-
+    //adds separator
+    char_str++; //3 chars + space 
+    top += ' ';
+    bottom += ' ';
+    
     top.resize(top.size() - 1); //removes last spaces
     bottom.resize(bottom.size() - 1); //removes last spaces
 
@@ -104,6 +117,7 @@ char_str(0)
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
 };
+
 
 //converts variables to a string
 std::string btxt::to_str(){
@@ -136,10 +150,20 @@ bool is_int(const std::string& input, const int& start_i){
 }
 
 //prints the help page erf
-void help(const std::string& path) {
+void help(const char* path) {
+    //gets the path of executable 
+    static std::string path_input = path;
+
+    //get the directory of the executable
+    for(int i=path_input.length(); i>=0; i--){
+        if(path_input[i] == '/'){
+            path_input.resize(i+1);
+            break;
+        }       
+    };
 
     sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
-    std::ifstream docs(std::string(path) + "commands.txt");
+    std::ifstream docs(std::string(path_input) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
         sys(line);

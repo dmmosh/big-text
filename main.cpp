@@ -13,20 +13,10 @@ dsj
 
 
 int main(int argc, char** argv){
-    
-    //gets the path of executable 
-    static std::string path = argv[0];
-
-    for(int i=path.length(); i>=0; i--){
-        if(path[i] == '/'){
-            path.resize(i+1);
-            break;
-        }       
-    };
 
     //if no arguments are provided, just print the help page
     if(argc == 1) {
-        help(path);
+        help(argv[0]);
         return 0;
     }
     
@@ -40,14 +30,15 @@ int main(int argc, char** argv){
 
         // -h, --help
         if(arg_input == "--help" || arg_input == "-h") {
-            help(path);
+            help(argv[0]);
             return 0;
         // -n, --newline
         } else if(arg_input == "--newline" || arg_input == "-n") {
+            //remove space at the end 
             if(out.length() != 0){
                 out.resize(out.size() -1);
             };
-            out += '\n';
+            out += '\n'; //add newline
         // -nl, --no-lines
         } else if(arg_input == "--no-lines" || arg_input == "-nl") {
             line = 0; //removes lines
@@ -67,10 +58,9 @@ int main(int argc, char** argv){
             repeat = std::stoi(arg_input.substr(9)); //sets to the repeat value
         } else {
 
-        //if first element or has newline 
-        //makes a new element and iterates to it fdg
-    
-        
+        //adds to the output string
+        out += arg_input + " ";
+
         }
     }
 
@@ -79,35 +69,26 @@ int main(int argc, char** argv){
         out.resize(out.size() -1);
     }
 
-    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
 
 
-    while(repeat){
-        std::string final_out; //big text output for each parameter
-        int char_ctr = 0; //counter of characters 
 
-        for(std::string out_str: out)
+    std::vector<btxt> big_out;
+    //iterate over characters in the output string
+    int start_i = 0;
+    int end_i = 0;
+    for(const char& c: out){
+        switch (c)
         {
-            btxt out(out_str, line);
+        case '\n':
+            big_out.push_back(btxt(line));
+        case ' ':
 
-            //if not newline character, add to char counter. otherwise reset
-            char_ctr = (out.char_str >= 0) ? char_ctr + out.char_str : 0;
-
-
-            //if total chars above terminal's char counter, add a newline character
-            //std::cout << out.char_str -1 << N;
-
-            
-            final_out += out.to_str();
-            final_out += "CHAR COUNTER: ";
-            final_out += std::to_string(char_ctr);
-            final_out += N;
-        }
-
-        sys(final_out);
-
-        repeat--;
+        break;
     }
+    
+
+       
 
    
     

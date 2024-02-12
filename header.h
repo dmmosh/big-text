@@ -22,10 +22,17 @@ class btxt{
     std::string bottom_line; //bottom line
     
     int char_str; //the character counter (utf 8 characters are weird in c)
+    bool have_lines;
 
+    btxt::btxt(const bool& have_lines);
     btxt(const std::string& input, const bool& have_lines);
-    std::string to_str();
+    btxt operator+(const char& c);  //overloads + operator
+    btxt& operator+=(const char& c);  //overloads += operator
+ 
+    std::string to_str(); //converts big text to string
 };
+
+
 
 //converts to BIG text
 //string as value because it might be modified
@@ -37,6 +44,7 @@ std::string exec(const char* cmd);
 // if string is an int
 bool is_int(const std::string& input, const int& start_i);
 
+
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
     for(T out_var: input){
@@ -45,7 +53,7 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
     return out << N; 
 };
 
-void help(const std::string& path); //help page
+void help(const char* path); //help page
 
 std::string exec(const char* cmd); //executes the command
 
