@@ -101,7 +101,7 @@ int main(int argc, char** argv){
 
         char_ctr += out.char_str;
         //if character counter is bigger than the number of columns
-        std::cout << char_ctr;
+        std::cout << char_ctr << N;
         sys(out.to_str());
     }
 
