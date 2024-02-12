@@ -1,6 +1,17 @@
 ![2024-01-12_21-09](https://github.com/wettestsock/big_text/assets/119987092/9a1bfe24-5b6e-4004-a4f7-24839f6b7ac9)
 
 A function from my Inficonnect4 project made into a separate executable.
+Currently working on an install script.
+
+TO COMPILE:
+```
+git clone https://github.com/wettestsock/big-text/
+cd ./big-text
+g++ main.cc utils.cc -o btxt
+```
+will make an install script, but for now youre welcome to manually compile and enjoy big terminal text through an alias
+
+
 
 I'm trying to get it to work on Windows but so far it's only available on Linux, MacOS, and Android.
 
