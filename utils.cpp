@@ -137,7 +137,7 @@ void help(const std::string& path) {
     btxt text1("massive text", 1);
     btxt text2("...ginormous even", 0);
 
-    sys(N + "fdsjhfdk");
+    sys(std::string(N + "fdsjhfdk"));
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
