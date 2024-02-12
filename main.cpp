@@ -83,6 +83,7 @@ int main(int argc, char** argv){
 
     static int char_ctr = 0; //counter of characters 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
+    std::cout << t_cols;
 
     std::string final_out; //big text output for each parameter
 
