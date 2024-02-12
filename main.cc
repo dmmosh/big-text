@@ -86,10 +86,12 @@ int main(int argc, char** argv){
         
     }
 
-    for(btxt& text: big_out){
-        sys(text.to_str());
+    while(repeat){
+        for(btxt& text: big_out){
+            sys(text.to_str());
+        }
+        repeat--;
     }
-    
 
        
 
