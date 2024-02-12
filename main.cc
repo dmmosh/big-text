@@ -33,6 +33,10 @@ int main(int argc, char** argv){
             help(argv[0]);
             return 0;
         // -n, --newline
+        } else if(arg_input == "--test" || arg_input == "-t") {
+            test(); //test the text
+            return 0;
+
         } else if(arg_input == "--newline" || arg_input == "-n") {
             //remove space at the end 
             if(out.length() != 0){

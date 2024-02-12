@@ -56,6 +56,8 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
 
 void help(const char* path); //help page
 
+void test(); //test the text
+
 std::string exec(const char* cmd); //executes the command
 
 void sys(const std::string& input);

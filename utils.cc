@@ -101,6 +101,7 @@ btxt& btxt::operator+=(const char& c){
             break;
         //special characters
         case '.':  this->top += ' '; this->bottom += "▄"; this->char_str++; break;
+        case ',': this->top += ' '; this->bottom += "█"; this->char_str++; break;
         case '\'': this->top += "▀"; this->bottom += ' '; this->char_str++; break;
         case '-': this->top += "▄▄"; this->bottom += "  "; this->char_str+=2; break;
         case ' ':  this->top += ' '; this->bottom += ' '; this->char_str++; break;
@@ -183,6 +184,16 @@ void help(const char* path) {
     sys("    -n, --newline       prints following text in a newline" );
     sys("    -nl, --no-lines     removes the top and bottom lines, enabled by default" );
     sys("    -x=, --repeat=<value> repeats the text a given N times\n" );
+    sys("    -t, --test          tests the text\n");
+}
+
+void test(){
+    sys(btxt("the brown fox jumps over the lazy dog", 1).to_str());
+    sys(btxt("0123456789", 1).to_str());
+    sys(btxt(".,\\- !?", 1).to_str());
+    sys(btxt("the brown fox jumps over the lazy dog", 0).to_str());
+    sys(btxt("0123456789", 0).to_str());
+    sys(btxt(".,\\- !?", 0).to_str());
 }
 
 std::string exec(const char* cmd) {
