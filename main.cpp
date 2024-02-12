@@ -54,14 +54,14 @@ int main(int argc, char** argv){
         // -x=
         } else if(!strncmp(argv[i], "-x=", 3)) {
             if(!is_int(argv[i], 3)) {
-                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+                sys("ERROR: can't multiply, not a number specified");
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
         // --times=
         } else if (!strncmp(argv[i], "--repeat=", 9)) {
             if(!is_int(argv[i], 9)) {
-                std::system("echo -e \"ERROR: can't multiply, not a number specified\"");
+                sys("ERROR: can't multiply, not a number specified");
                 return 0;
             }
             repeat = std::stoi(std::string(argv[i]).substr(9)); //sets to the repeat value
@@ -94,8 +94,10 @@ int main(int argc, char** argv){
     static int char_ctr = 0; //counter of characters 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
-
+    //actually prints the big text
     for(std::string& out_str : final_out) {
+        btxt out(out_str, line);
+
         sys(btxt(out_str, line).to_str());
     }
 
