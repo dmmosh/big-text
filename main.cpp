@@ -64,10 +64,12 @@ int main(int argc, char** argv){
         }
     }
 
+    /*
     //remove space from last element
     if(out.length() != 0){
         out.resize(out.size() -1);
     }
+    */
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
     std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
@@ -78,9 +80,10 @@ int main(int argc, char** argv){
         if(c == '\n' || big_out.back().char_str >= t_cols -5){
             std::cout << t_cols-5 << N << big_out.back().char_str << N ;
             big_out.push_back(btxt(line));
-        } else {
-            big_out.back() += c;
         }
+        
+        big_out.back() += c;
+        
     }
 
     for(btxt& text: big_out){
