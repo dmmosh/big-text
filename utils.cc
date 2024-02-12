@@ -209,6 +209,30 @@ std::string exec(const char* cmd) {
     return result;
 }
 
+void sys_btxt(const std::string& out, const bool& line, int repeat){
+    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
+    std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
+
+    //iterate over characters in the output string
+    for(const char& c: out){
+        if(c == '\n' || big_out.back().char_str >= t_cols -4){
+            //std::cout << t_cols-4 << N << big_out.back().char_str << N ; //debug 
+            big_out.push_back(btxt(line));
+        }
+
+        big_out.back() += c;
+        
+    }
+
+    while(repeat){
+        for(btxt& text: big_out){
+            sys(text.to_str());
+        }
+        repeat--;
+    }
+}
+
+
 //system calls but string as input
 void sys(const std::string& input){
         std::system(("echo -e \"" + input + "\"").c_str());

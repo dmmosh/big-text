@@ -36,7 +36,6 @@ int main(int argc, char** argv){
         } else if(arg_input == "--test" || arg_input == "-t") {
             test(); //test the text
             return 0;
-
         } else if(arg_input == "--newline" || arg_input == "-n") {
             //remove space at the end 
             if(out.length() != 0){
@@ -74,60 +73,5 @@ int main(int argc, char** argv){
         out.resize(out.size() -1);
     }
     
-
-    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
-    std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
-
-    //iterate over characters in the output string
-    int start_i = 0; //index the last space is in (default 0)
-    for(const char& c: out){
-        if(c == '\n' || big_out.back().char_str >= t_cols -4){
-            //std::cout << t_cols-4 << N << big_out.back().char_str << N ; //debug 
-            big_out.push_back(btxt(line));
-        }
-
-        big_out.back() += c;
-        
-    }
-
-    while(repeat){
-        for(btxt& text: big_out){
-            sys(text.to_str());
-        }
-        repeat--;
-    }
-
-       
-
-   
-    
-
-    /*
-    //copies the wanted amount of times
-    std::vector<std::string> final_out;
-    while (repeat){
-        final_out.insert(final_out.end(), out.begin(), out.end());
-        repeat--;
-    };
-
-    //prints the big textgfdfg
-
-    //prints the big text (multiplied times)
-    for(std::string& out_str : final_out) {
-        btxt out(out_str, line);
-
-
-        char_ctr += out.char_str;
-        //if character counter is bigger than the number of columns
-        std::cout << char_ctr << N;
-        sys(out.to_str());vdf
-    }
-    */
-
-    //terminal column char size
-
-    // arg_input LIST IS THE PARAMTERS TO THE EXECUTABLE!!
-    //std::cout << arg_input[1] << N;
-    //fdsagh
-    //std::system(("echo -e \"" + text_output + "\"").c_str());
+    sys_btxt(out, line, repeat); //prints the text
 }
