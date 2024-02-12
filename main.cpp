@@ -71,8 +71,8 @@ int main(int argc, char** argv){
         //makes a new element and iterates to it fdg
     
         //out.back() += argv[i];
-        //out.back() += " ";
         out.push_back(argv[i]);
+        out.push_back(" ");
         }
     }
 
