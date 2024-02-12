@@ -184,7 +184,7 @@ void help(const char* path) {
     sys("    -h, --help          help page" );
     sys("    -n, --newline       prints following text in a newline" );
     sys("    -nl, --no-lines     removes the top and bottom lines, enabled by default" );
-    sys("    -x=, --repeat=<value> repeats the text a given N times\n" );
+    sys("    -x=, --repeat=<value> repeats the text a given N times" );
     sys("    -t, --test          tests the text\n");
 }
 
