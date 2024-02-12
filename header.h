@@ -12,9 +12,11 @@
 
 
 class btxt{
-    public:
+    private:
     static const std::vector<std::string> top_big;
     static const std::vector<std::string> bottom_big;
+
+    public:
     std::string top_line; //top line
     std::string top; //top text
     std::string bottom; //bottom text
