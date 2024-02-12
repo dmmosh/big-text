@@ -98,6 +98,8 @@ int main(int argc, char** argv){
         {
             final_out += "\n BAD STUFF\n";
             char_ctr = 0;
+        } else if (!out_str.length()) { //if -n or --newline
+            char_ctr = 0;
         }
         final_out += out.to_str();
     }
