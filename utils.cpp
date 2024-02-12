@@ -107,7 +107,7 @@ char_str(0)
 
 //converts variables to a string
 std::string btxt::to_string(){
-    return top_line+top+bottom+bottom_line;
+    return top_line + top + N + bottom+ N + bottom_line;
 }
 
 std::string exec(const char* cmd) {
