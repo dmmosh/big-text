@@ -197,7 +197,6 @@ void help(const char* path) {
     sys("    -x=, --repeat=<value> repeats the text a given N times\n" );
 }
 
-template<typename T>
 std::string exec(const char* cmd) {
     std::array<char, 128> buffer;
     std::string result;
