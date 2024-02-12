@@ -181,22 +181,20 @@ void help(const char* path) {
     };
     sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
 
-    sys("\n OVERVIEW:" );
-    sys("\n Big Terminal Text" );
-    sys("\n By Dmytro Moshkovskyi" );
-    sys("\n https://github.com/wettestsock/big-text" );
-    sys("\n " );
-    sys("\n Function from Inficonnect4 made for a terminal executable" );
-    sys("\n written in C++ ");
-    sys("\n");
-    sys("\n USAGE: " );
-    sys("\n     btxt [options] text ..." );
-    sys("\n " );
-    sys("\n OPTIONS:" );
-    sys("\n     -h, --help          help page" );
-    sys("\n     -n, --newline       prints following text in a newline" );
-    sys("\n     -nl, --no-lines     removes the top and bottom lines, enabled by default" );
-    sys("\n     -x=, --repeat=<value> repeats the text a given N times\n" );
+    sys("OVERVIEW:" );
+    sys("Big Terminal Text" );
+    sys("By Dmytro Moshkovskyi" );
+    sys("https://github.com/wettestsock/big-text" );
+    sys("Function from Inficonnect4 made for a terminal executable" );
+    sys("written in C++ ");
+    sys("USAGE: " );
+    sys("    btxt [options] text ..." );
+    sys("" );
+    sys("OPTIONS:" );
+    sys("    -h, --help          help page" );
+    sys("    -n, --newline       prints following text in a newline" );
+    sys("    -nl, --no-lines     removes the top and bottom lines, enabled by default" );
+    sys("    -x=, --repeat=<value> repeats the text a given N times\n" );
 }
 
 template<typename T>
