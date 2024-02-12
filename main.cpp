@@ -85,6 +85,7 @@ int main(int argc, char** argv){
         case ' ':
 
         break;
+        }
     }
     
 
