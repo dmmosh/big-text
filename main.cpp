@@ -83,36 +83,36 @@ int main(int argc, char** argv){
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
-    std::string final_out; //big text output for each parameter
-    int char_ctr = 0; //counter of characters 
-
-    for(std::string out_str: out)
-    {
-        btxt out(out_str, line);
-
-        if(out.char_str >= 0) {
-            char_ctr += out.char_str; //adds string's size to total char counter
-        }
-        else {
-            char_ctr = 0;
-        }
-
-
-        //if total chars above terminal's char counter, add a newline character
-        //std::cout << out.char_str -1 << N;
-        
-        if (char_ctr > t_cols)
-        {
-            final_out += "\n BAD STUFF\n";
-            char_ctr = 0;
-        }
-        final_out += out.to_str();
-    }
 
     while(repeat){
+        std::string final_out; //big text output for each parameter
+        int char_ctr = 0; //counter of characters 
+
+        for(std::string out_str: out)
+        {
+            btxt out(out_str, line);
+
+            //if not newline character, add to char counter. otherwise reset
+            char_ctr = (out.char_str >= 0) ? char_ctr + out.char_str : 0;
+
+
+            //if total chars above terminal's char counter, add a newline character
+            //std::cout << out.char_str -1 << N;
+
+            if (char_ctr > t_cols)
+            {
+                final_out += "\n BAD STUFF\n";
+                char_ctr = 0;
+            }
+            final_out += out.to_str();
+        }
+
         sys(final_out);
+        
         repeat--;
     }
+
+   
     
 
     /*

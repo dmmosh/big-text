@@ -88,8 +88,8 @@ char_str(0)
     
 
 
-    top.resize(top.size() - 1);
-    bottom.resize(bottom.size() - 1);
+    top.resize(top.size() - 1); //removes last spaces
+    bottom.resize(bottom.size() - 1); //removes last spaces
 
     //adds the lines
     if(have_lines){
