@@ -24,7 +24,7 @@ class btxt{
     int char_str; //the character counter (utf 8 characters are weird in c)
     bool have_lines;
 
-    btxt::btxt(const bool& have_lines);
+    btxt(const bool& have_lines);
     btxt(const std::string& input, const bool& have_lines);
     btxt operator+(const char& c);  //overloads + operator
     btxt& operator+=(const char& c);  //overloads += operator
