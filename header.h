@@ -7,11 +7,27 @@
 #include <fstream>
 #include <filesystem>
 #include <array>
+#include <stdlib.h>
+#include <string.h>
 #define N '\n'
+
+
+
+class btxt{
+    public:
+    std::string top_line; //top line
+    std::string top; //top text
+    std::string bottom; //bottom text
+    std::string bottom_line; //bottom line
+    
+    int char_str; //the character counter (utf 8 characters are weird in c)
+
+    btxt(const std::string& input, const bool& have_lines);
+    std::string to_string();
+}
 
 //converts to BIG text
 //string as value because it might be modified
-std::string big_text(const std::string& input, const bool& have_lines);
 
 //executes command and returns the output
 std::string exec(const char* cmd) ;
@@ -28,5 +44,8 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
     return out << N; 
 }
 
-void help(const std::string& path);
-std::string exec(const char* cmd);
+void help(const std::string& path); //help page
+
+std::string exec(const char* cmd); //executes the command
+
+void sys(const std::string& input);

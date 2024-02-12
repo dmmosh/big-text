@@ -3,10 +3,13 @@
 
 //converts to BIG text
 //string as value because it might be modified
-std::string big_text(const std::string& input, const bool& have_lines){
+btxt::btxt(const std::string& input, const bool& have_lines){
     
+    //output struct
+
     if(!input.length()){
-        return "\n";
+        top = "\n"; //top is newline
+        return;
     }
 
     //TOP BIG LETTERS (match the bottom)
@@ -18,7 +21,7 @@ std::string big_text(const std::string& input, const bool& have_lines){
         "█▀█", "▄█", "▀█", "▀▀█", "█ █", "█▀", "█▄▄", "▀▀█", "▄▀▀▄", "█▀█"
     };
 
-    //BOTTOM BIG LETTERS (match the top)
+    //bottom BIG LETTERS (match the top)
     //a - z and 0 -9 
     const std::vector<std::string> bottom_big = {
         "█▀█", "█▄█", "█▄▄", "█▄▀", "██▄", "█▀ ", "█▄█", "█▀█", "█", "█▄█", "█ █", "█▄▄", 
@@ -29,11 +32,6 @@ std::string big_text(const std::string& input, const bool& have_lines){
     };
 
     //outputs
-    std::string top_line ="";
-    std::string top; 
-    std::string bottom;
-    std::string bottom_line ="";
-    int char_str = 0; //current string char counter
 
 
     for(const char c: input){
@@ -99,8 +97,12 @@ std::string big_text(const std::string& input, const bool& have_lines){
 
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
-    return top_line + top + N + bottom + N + bottom_line;
+    return out;
 };
+
+std::string btxt::to_string(){
+
+}
 
 std::string exec(const char* cmd) {
     std::array<char, 128> buffer;
@@ -152,4 +154,9 @@ std::string exec(const char* cmd) {
         result += buffer.data();
     }
     return result;
+}
+
+//system calls but string as input
+void sys(const std::string& input){
+    std::system(input.c_str());
 }

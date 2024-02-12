@@ -94,6 +94,7 @@ int main(int argc, char** argv){
     static int char_ctr = 0; //counter of characters 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
+
     for(std::string& out_str : final_out) {
         
         std::system(("echo -e \"" + big_text(out_str, line) + "\"").c_str());

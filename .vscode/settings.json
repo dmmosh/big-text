@@ -81,6 +81,8 @@
         "shared_mutex": "cpp",
         "cfenv": "cpp",
         "typeindex": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "regex": "cpp",
+        "filesystem": "cpp"
     }
 }
