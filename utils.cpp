@@ -44,6 +44,7 @@ bottom(""),
 bottom_line(""),
 char_str(0)
 {
+    std::cout << "JLKDJFLASKF";
     //operator overloading and stuff
     for(const char& c: input){
         *this += c;
