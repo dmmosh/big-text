@@ -44,7 +44,6 @@ bottom(""),
 bottom_line(""),
 char_str(0)
 {
-    std::cout << "JLKDJFLASKF";
     //operator overloading and stuff
     for(const char& c: input){
         *this += c;
@@ -85,7 +84,7 @@ btxt& btxt::operator+=(const char& c){
         case ' ':  this->top += ' '; this->bottom += ' '; this->char_str++; break;
         case '!': this->top += "█"; this->bottom += "▄"; this->char_str++; break;
         case '?': this->top += "▀█"; this->bottom += " ▄"; this->char_str+=2; break;
-        //default: return *this; //skips any and all other characters
+        default: return *this; //skips any and all other characters
     }
     
     //adds separator
