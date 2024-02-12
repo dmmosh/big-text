@@ -116,6 +116,7 @@ btxt btxt::operator+(const char& c){
 
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
+    return *this;
 };
 
 
