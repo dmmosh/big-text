@@ -93,7 +93,7 @@ btxt btxt::operator+(const char& c){
         case ' ':  top += ' '; bottom += ' '; char_str++; break;
         case '!': top += "█"; bottom += "▄"; char_str++; break;
         case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
-        default: return; //skips any and all other characters
+        default: return *this; //skips any and all other characters
     }
     
     //adds separator
@@ -116,6 +116,7 @@ btxt btxt::operator+(const char& c){
 
     //std::cout << char_str << N << char_ctr << N << t_cols << N;
     //returns the fat string
+    return *this;
 };
 
 
