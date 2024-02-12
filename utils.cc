@@ -169,7 +169,7 @@ void help(const char* path) {
         }       
     };
     sys_btxt("massive text", 1, 1);
-    sys_btxt("...ginormous even", 1, 1);
+    sys_btxt("...ginormous even", 0, 1);
 
     sys("OVERVIEW:" );
     sys("Big Terminal Text" );
