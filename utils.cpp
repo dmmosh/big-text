@@ -105,10 +105,10 @@ btxt& btxt::operator+=(const char& c){
 //converts variables to a string
 std::string btxt::to_str(){
     return 
-    top_line.resize(top_line.size()-1) + N + 
-    top.resize(top.size()-1) + N + 
-    bottom.resize(bottom.size()-1) + N + 
-    bottom_line.resize(bottom_line.size()-1) + N;
+    top_line.substr(0, top_line.size()-1) + N + 
+    top.substr(0, top.size()-1) + N + 
+    bottom.substr(0, bottom.size()-1) + N + 
+    bottom_line.substr(0, bottom_line.size()-1) + N;
 }
 
 std::string exec(const char* cmd) {
