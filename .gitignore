@@ -1,1 +1,3 @@
-build/
+btxt
+install.sh
+.gitignore
