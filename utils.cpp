@@ -104,7 +104,7 @@ char_str(0)
 };
 
 //converts variables to a string
-std::string btxt::to_string(){
+std::string btxt::to_str(){
     return top_line + top + N + bottom+ N + bottom_line;
 }
 
@@ -134,14 +134,12 @@ bool is_int(const char* string, int start_i=0) {
 
 //prints the help page erf
 void help(const std::string& path) {
-    btxt text1("massive text", 1);
-    btxt text2("...ginormous even", 0);
 
-    sys(std::string(N + "fdsjhfdk"));
+    sys(N + btxt("massive text", 1).to_str() + btxt("...ginormous even", 0).to_str());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
-        std::system(("echo -e \"" + line + "\"").c_str());
+        sys(line);
     }
 }
 
@@ -161,5 +159,5 @@ std::string exec(const char* cmd) {
 
 //system calls but string as input
 void sys(const std::string& input){
-    std::system(input.c_str());
+        std::system(("echo -e \"" + input + "\"").c_str());
 }

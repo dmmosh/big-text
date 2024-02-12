@@ -7,7 +7,7 @@
 #include <fstream>
 #include <filesystem>
 #include <array>
-#define N "\n"
+#define N '\n'
 
 
 
@@ -24,7 +24,7 @@ class btxt{
     int char_str; //the character counter (utf 8 characters are weird in c)
 
     btxt(const std::string& input, const bool& have_lines);
-    std::string to_string();
+    std::string to_str();
 };
 
 //converts to BIG text
@@ -43,7 +43,7 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {
         out << out_var;
     }
     return out << N; 
-}
+};
 
 void help(const std::string& path); //help page
 
