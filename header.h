@@ -26,8 +26,10 @@ class btxt{
 
     btxt(const bool& have_lines); //constructor 1
     btxt(const std::string& input, const bool& have_lines); //constructor 2
+    btxt(const char& input, const bool& have_lines); //constructor 3
+    btxt& operator+(const char& c);
     btxt& operator+=(const char& c);  //overloads += operator
- 
+    
     std::string to_str(); //converts big text to string
 };
 

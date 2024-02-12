@@ -51,6 +51,25 @@ have_lines(have_lines)
     }
 };
 
+
+//constructor 3
+btxt::btxt(const char& input, const bool& have_lines):
+
+// member initialization list
+top_line(""),
+top(""),
+bottom(""),
+bottom_line(""),
+char_str(0),
+have_lines(have_lines) 
+{
+
+    //bruh
+    *this += input;
+};
+
+
+
 //overloads += operator
 btxt& btxt::operator+=(const char& c){
 

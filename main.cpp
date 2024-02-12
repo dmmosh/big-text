@@ -70,21 +70,32 @@ int main(int argc, char** argv){
     }
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
+    int col_num = 0; //col number for input
 
+    std::vector<btxt> big_out = {btxt(line)};
 
-
-    std::vector<btxt> big_out;
     //iterate over characters in the output string
-    int start_i = 0;
-    int end_i = 0;
-    for(const char& c: out){
-        switch (c)
+    int start_i = 0; //index the last space is in (default 0)
+    for(size_t i =0; i< out.length()+1; i++){
+        if (big_out.back().char_str > col_num)
+        {
+            big_out.push_back(btxt(line));
+        }
+        
+
+
+        switch (out[i])
         {
         case '\n':
             big_out.push_back(btxt(line));
+            start_i= i;
+            break;
         case ' ':
-
-        break;
+            start_i= i;
+            break;
+        default:
+            big_out.back() += out[i];
+            
         }
     }
     
