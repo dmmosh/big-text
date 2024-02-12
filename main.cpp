@@ -75,8 +75,8 @@ int main(int argc, char** argv){
     //iterate over characters in the output string
     int start_i = 0; //index the last space is in (default 0)
     for(const char& c: out){
-        if(c == '\n' || big_out.back().char_str > t_cols){
-            std::cout << t_cols << N << big_out.back().char_str << N ;
+        if(c == '\n' || (big_out.back().char_str)-2 >= t_cols){
+            std::cout << t_cols << N << big_out.back().char_str-2 << N ;
             big_out.push_back(btxt(line));
         } else {
             big_out.back() += c;
