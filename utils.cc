@@ -188,6 +188,7 @@ void help(const char* path) {
     sys("    -t, --test          tests the text\n");
 }
 
+// TESTS THE LETTERS
 void test(){
     sys_btxt("the brown fox jumps over the lazy dog", 1, 1);
     sys_btxt("0123456789", 1, 1);
@@ -197,6 +198,7 @@ void test(){
     sys_btxt(".,\\- !?", 0, 1);
 }
 
+//RETURNS OUTPUT OF A COMMAND
 std::string exec(const char* cmd) {
     std::array<char, 128> buffer;
     std::string result;
@@ -210,8 +212,9 @@ std::string exec(const char* cmd) {
     return result;
 }
 
+//PRINTS BIG TEXT INTO THE OUTPUT
 void sys_btxt(const std::string& out, const bool& line, int repeat = 1){
-    static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
+    static const int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
     std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
 
     //iterate over characters in the output string
