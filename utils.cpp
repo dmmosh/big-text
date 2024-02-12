@@ -135,7 +135,7 @@ bool is_int(const char* string, int start_i=0) {
 //prints the help page erf
 void help(const std::string& path) {
 
-    sys(N + btxt("massive text", 1).to_str() + btxt("...ginormous even", 0).to_str());
+    sys(N + btxt("massive text", 1).to_str() + N + btxt("...ginormous even", 0).to_str());
     std::ifstream docs(std::string(path) + "commands.txt");
     std::string line;
     while (getline(docs, line)){
