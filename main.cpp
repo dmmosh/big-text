@@ -99,16 +99,15 @@ int main(int argc, char** argv){
             //if total chars above terminal's char counter, add a newline character
             //std::cout << out.char_str -1 << N;
 
-            if (char_ctr > t_cols)
-            {
-                final_out += "\n BAD STUFF\n";
-                char_ctr = 0;
-            }
+            
             final_out += out.to_str();
+            final_out += "CHAR COUNTER: ";
+            final_out += std::to_string(char_ctr);
+            final_out += N;
         }
 
         sys(final_out);
-        
+
         repeat--;
     }
 
