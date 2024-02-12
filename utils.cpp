@@ -106,15 +106,13 @@ std::string btxt::to_str(){
             this->top_line += "▀";
             this->bottom_line += "▄";
         }
-        this->top_line += N;
-        this->bottom_line += N;
     }
 
     return 
-    top_line.substr(0, top_line.size()-1) + 
+    top_line.substr(0, top_line.size()-1) + N +
     top.substr(0, top.size()-1) + N + 
     bottom.substr(0, bottom.size()-1) + N + 
-    bottom_line.substr(0, bottom_line.size()-1);
+    bottom_line.substr(0, bottom_line.size()-1) + N;
 }
 
 std::string exec(const char* cmd) {
