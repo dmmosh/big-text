@@ -35,7 +35,7 @@ std::string exec(const char* cmd);
 
 
 // if string is an int
-bool is_int(const char* string, int start_i);
+bool is_int(const std::string& input, const int& start_i);
 
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& input) {

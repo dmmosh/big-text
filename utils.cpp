@@ -124,13 +124,14 @@ std::string exec(const char* cmd) {
 };
 
 // if string is an int
-bool is_int(const char* string, int start_i=0) {
-    do {
-        if(!isdigit(string[start_i])) {
+bool is_int(const std::string& input, const int& start_i){
+    for (const char& c: input.substr(start_i))
+    {
+        if(!isdigit(c)){
             return false;
         }
-        start_i++;
-    } while(string[start_i] != '\0');
+    }
+
     return true;
 }
 

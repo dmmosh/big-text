@@ -12,7 +12,7 @@ dsj
 
 
 
-int main(int argc, char** argv){
+int main(int argc, const std::vector<const std::string> argv){
 
     
     //gets the path of executable 
@@ -39,39 +39,38 @@ int main(int argc, char** argv){
     for(int i=1; i<argc; i++){ //iterates over the argument list
 
         // -h, --help
-        if(!strcmp(argv[i], "--help") || !strcmp(argv[i], "-h")) {
+        if(argv[i] == "--help" || argv[i] == "-h") {
             help(path);
             return 0;
         // -n, --newline
-        } else if(!strcmp(argv[i], "--newline") || !strcmp(argv[i], "-n")) {
+        } else if(argv[i] == "--newline" || argv[i] == "-n") {
             if(out.back().length() != 0){
                 out.back().resize(out.back().size() -1);
             };
             out.push_back(""); //pushes a new element
         // -nl, --no-lines
-        } else if(!strcmp(argv[i], "--no-lines") || !strcmp(argv[i], "-nl")) {
+        } else if(argv[i] == "--no-lines" || argv[i] == "-nl") {
             line = 0; //removes lines
         // -x=
-        } else if(!strncmp(argv[i], "-x=", 3)) {
+        } else if(argv[i].substr(0,3) == "-x=") {
             if(!is_int(argv[i], 3)) {
                 sys("ERROR: can't multiply, not a number specified");
                 return 0;
             }
-            repeat = std::stoi(std::string(argv[i]).substr(3)); //sets to the repeat value
+            repeat = std::stoi(argv[i].substr(3)); //sets to the repeat value
         // --times=
-        } else if (!strncmp(argv[i], "--repeat=", 9)) {
+        } else if (argv[i].substr(0,8) == "--times=") {
             if(!is_int(argv[i], 9)) {
                 sys("ERROR: can't multiply, not a number specified");
                 return 0;
             }
-            repeat = std::stoi(std::string(argv[i]).substr(9)); //sets to the repeat value
+            repeat = std::stoi(argv[i].substr(9)); //sets to the repeat value
         } else {
 
         //if first element or has newline 
         //makes a new element and iterates to it fdg
     
-        out.back() += argv[i];
-        out.back() += " ";
+        out.push_back(std::string(argv[i]));
         }
     }
 
