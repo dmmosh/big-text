@@ -14,14 +14,14 @@
 class btxt{
 
     public:
+    static const std::vector<std::string> top_big; //top characters
+    static const std::vector<std::string> bottom_big; //bottom characters
     std::string top_line; //top line
     std::string top; //top text
     std::string bottom; //bottom text
     std::string bottom_line; //bottom line
     
     int char_str; //the character counter (utf 8 characters are weird in c)
-    static const std::vector<std::string> top_big;
-    static const std::vector<std::string> bottom_big;
 
     btxt(const std::string& input, const bool& have_lines);
     std::string to_string();
