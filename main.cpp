@@ -75,10 +75,9 @@ int main(int argc, char** argv){
     }
 
     //remove space from last element
-    if(out.back().length() != 0){
-        out.back().resize(out.back().size() -1);
+    if(out.length() != 0){
+        out.resize(out.size() -1);
     }
-    std::cout << out[0];
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
