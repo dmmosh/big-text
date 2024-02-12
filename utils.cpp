@@ -93,10 +93,8 @@ btxt& btxt::operator+=(const char& c){
     this->bottom += ' ';
 
     //adds the lines
-    if(this->have_lines){
         this->top_line += "▀";
         this->bottom_line += "▄";
-    }
     return *this;
 };
 
