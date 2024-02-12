@@ -101,11 +101,7 @@ int main(int argc, char** argv){
 
         char_ctr += out.char_str;
         //if character counter is bigger than the number of columns
-        if (char_ctr > t_cols)
-        {
-            std::cout << "jslfkdjfdsl" << N;
-            char_ctr = 0;
-        }
+        std::cout << char_ctr;
         sys(out.to_str());
     }
 
