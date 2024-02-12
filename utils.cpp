@@ -101,7 +101,7 @@ btxt& btxt::operator+=(const char& c){
 //converts variables to a string
 std::string btxt::to_str(){
     if(this->have_lines){
-        for (size_t i = 0; i < this->char_str; i++)
+        for (size_t i = 0; i < this->char_str-1; i++)
         {
             this->top_line += "▀";
             this->bottom_line += "▄";
