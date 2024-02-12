@@ -72,10 +72,7 @@ have_lines(have_lines)
 
 //overloads += operator
 btxt& btxt::operator+=(const char& c){
-    if(c == '\n'){
-        this->top = "\n";
-        return *this;
-    }
+
 
     switch(tolower(c)){
         //letters
@@ -125,6 +122,10 @@ btxt& btxt::operator+=(const char& c){
 //converts variables to a string
 std::string btxt::to_str(){
 
+    //if the big text is empty
+    if(this->top.empty() && this->bottom.empty()){
+        return "";
+    }
 
     //if include lines, print them 
     if(this->have_lines){
