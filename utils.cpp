@@ -92,6 +92,7 @@ btxt& btxt::operator+=(const char& c){
     this->top += ' ';
     this->bottom += ' ';
 
+    return *this;
 };
 
 
