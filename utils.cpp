@@ -106,6 +106,8 @@ std::string btxt::to_str(){
             this->top_line += "▀";
             this->bottom_line += "▄";
         }
+        this->top_line += "\n";
+        this->bottom_line += "\n";
     }
 
     return 
