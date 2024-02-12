@@ -92,21 +92,26 @@ btxt& btxt::operator+=(const char& c){
     this->top += ' ';
     this->bottom += ' ';
 
-    //adds the lines
-        this->top_line += "▀";
-        this->bottom_line += "▄";
-    return *this;
 };
 
 
 
 //converts variables to a string
 std::string btxt::to_str(){
+    if(this->have_lines){
+        for (size_t i = 0; i < this->char_str; i++)
+        {
+            this->top_line += "▀";
+            this->bottom_line += "▄";
+        }
+        
+    }
+
     return 
-    top_line.substr(0, top_line.size()-1) + N + 
+    top_line.substr(0, top_line.size()-1) + 
     top.substr(0, top.size()-1) + N + 
     bottom.substr(0, bottom.size()-1) + N + 
-    bottom_line.substr(0, bottom_line.size()-1) + N;
+    bottom_line.substr(0, bottom_line.size()-1);
 }
 
 std::string exec(const char* cmd) {
