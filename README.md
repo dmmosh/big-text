@@ -24,4 +24,5 @@ OPTIONS:
     -n, --newline       prints following text in a newline
     -nl, --no-lines     removes the top and bottom lines, enabled by default
     -x=, --repeat=<value> repeats the text a given N times
+    -t, --test          tests the text
 ```
