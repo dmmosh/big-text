@@ -71,7 +71,7 @@ int main(int argc, char** argv){
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
 
-    std::vector<btxt> big_out; //vector of big text classes
+    std::vector<btxt> big_out = {}; //vector of big text classes
 
     //iterate over characters in the output string
     int start_i = 0; //index the last space is in (default 0)
