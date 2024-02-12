@@ -46,78 +46,67 @@ char_str(0)
 {
     //operator overloading and stuff
     for(const char& c: input){
-        *this = *this + c;
+        *this += c;
     }
 };
 
 //overloads += operator
 btxt& btxt::operator+=(const char& c){
-    *this = *this + c;
-    return *this;
-};
-
-
-//adds a character
-//cant be newline, make sure that dont happen
-btxt btxt::operator+(const char& c){
-
     switch(tolower(c)){
         //letters
         case 'a' ... 'z': 
             //appends the big version strings of each
-            top += top_big[(int)tolower(c)-97];
-            bottom += bottom_big[(int)tolower(c)-97];
+            this->top += this->top_big[(int)tolower(c)-97];
+            this->bottom += this->bottom_big[(int)tolower(c)-97];
             switch(tolower(c)){
-                case 'i': char_str++; break;
-                case 'm': case 'w': char_str+=5; break;
-                case 's': case 'z': char_str+=2; break;
-                case 'n': char_str+=4; break;
-                default: char_str+=3;  
+                case 'i': this->char_str++; break;
+                case 'm': case 'w': this->char_str+=5; break;
+                case 's': case 'z': this->char_str+=2; break;
+                case 'n': this->char_str+=4; break;
+                default: this->char_str+=3;  
             }
             break;
         //numbers
         case '0' ... '9':
             //decimal - 48 + 26
-            top+= top_big[(int)c-22];
-            bottom+= bottom_big[(int)c-22];
+            this->top+= this->top_big[(int)c-22];
+            this->bottom+= this->bottom_big[(int)c-22];
             switch(tolower(c)){
-                case '1': case '2': case '5': char_str+=2; break;
-                case '8': char_str +=4; break;
-                default: char_str +=3;
+                case '1': case '2': case '5': this->char_str+=2; break;
+                case '8': this->char_str +=4; break;
+                default: this->char_str +=3;
             }
             break;
         //special characters
-        case '.':  top += ' '; bottom += "▄"; char_str++; break;
-        case '\'': top += "▀"; bottom += ' '; char_str++; break;
-        case '-': top += "▄▄"; bottom += "  "; char_str+=2; break;
-        case ' ':  top += ' '; bottom += ' '; char_str++; break;
-        case '!': top += "█"; bottom += "▄"; char_str++; break;
-        case '?': top += "▀█"; bottom += " ▄"; char_str+=2; break;
+        case '.':  this->top += ' '; this->bottom += "▄"; this->char_str++; break;
+        case '\'': this->top += "▀"; this->bottom += ' '; this->char_str++; break;
+        case '-': this->top += "▄▄"; this->bottom += "  "; this->char_str+=2; break;
+        case ' ':  this->top += ' '; this->bottom += ' '; this->char_str++; break;
+        case '!': this->top += "█"; this->bottom += "▄"; this->char_str++; break;
+        case '?': this->top += "▀█"; this->bottom += " ▄"; this->char_str+=2; break;
         //default: return *this; //skips any and all other characters
     }
     
     //adds separator
-    char_str++; //3 chars + space 
-    top += ' ';
-    bottom += ' ';
+    this->char_str++; //3 chars + space 
+    this->top += ' ';
+    this->bottom += ' ';
     
-    top.resize(top.size() - 1); //removes last spaces
-    bottom.resize(bottom.size() - 1); //removes last spaces
+    this->top.resize(this->top.size() - 1); //removes last spaces
+    this->bottom.resize(this->bottom.size() - 1); //removes last spaces
 
     //adds the lines
-    if(have_lines){
-        for(size_t i=0; i<char_str-1; i++){
-            top_line += "▀";
-            bottom_line += "▄";
+    if(this->have_lines){
+        for(size_t i=0; i<this->char_str-1; i++){
+            this->top_line += "▀";
+            this->bottom_line += "▄";
         }
-        top_line += N;
-        bottom_line += N;
+        this->top_line += N;
+        this->bottom_line += N;
     }
-
-    //std::cout << char_str << N << char_ctr << N << t_cols << N;
-    //returns the fat string
     return *this;
 };
+
 
 
 //converts variables to a string

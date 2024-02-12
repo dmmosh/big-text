@@ -26,7 +26,6 @@ class btxt{
 
     btxt(const bool& have_lines);
     btxt(const std::string& input, const bool& have_lines);
-    btxt operator+(const char& c);  //overloads + operator
     btxt& operator+=(const char& c);  //overloads += operator
  
     std::string to_str(); //converts big text to string
