@@ -96,8 +96,7 @@ int main(int argc, char** argv){
         //if total chars above terminal's char counter, add a newline character
         if (char_ctr > t_cols)
         {
-            final_out += N;
-            char_ctr =0;
+            sys("ASASDSAJLKDSJLDSF");
         }
         final_out += out.to_str();
     }
