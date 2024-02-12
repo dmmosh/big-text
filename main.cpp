@@ -91,7 +91,7 @@ int main(int argc, char** argv){
 
     //prints the big textgfdfg
 
-    static int char_ctr = 0; //counter of characters 
+    int char_ctr = 0; //counter of characters 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
     //actually prints the big text
