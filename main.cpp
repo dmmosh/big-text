@@ -96,7 +96,7 @@ int main(int argc, char** argv){
         //if total chars above terminal's char counter, add a newline character
         if (char_ctr > t_cols)
         {
-            final_out += "JLJSADLKJFDLK" + N;
+            final_out += "JLJSADLKJFDLK";
             char_ctr = 0;
         }
         final_out += out.to_str();
