@@ -70,9 +70,8 @@ int main(int argc, char** argv){
         //if first element or has newline 
         //makes a new element and iterates to it fdg
     
-        //out.back() += argv[i];
-        out.push_back(std::string(argv[i]));
-        out.push_back(" ");
+        out.back() += argv[i];
+        out.back() += " ";
         }
     }
 
@@ -81,6 +80,7 @@ int main(int argc, char** argv){
     if(out.back().length() != 0){
         out.back().resize(out.back().size() -1);
     }
+    std::cout << out[0];
 
     static int t_cols = std::stoi(exec("stty size | awk '{print $2}'"));
 
