@@ -7,7 +7,7 @@
 #include <fstream>
 #include <filesystem>
 #include <array>
-#define N '\n'
+#define N "\n"
 
 
 
