@@ -96,7 +96,7 @@ int main(int argc, char** argv){
         //if total chars above terminal's char counter, add a newline character
         if (char_ctr > t_cols)
         {
-            std::cout << char_ctr << " > " << t_cols << N;
+            std::cout << out.char_str << N;
             char_ctr = 0;
         }
         final_out += out.to_str();
