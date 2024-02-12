@@ -22,10 +22,10 @@ class btxt{
     std::string bottom_line; //bottom line
     
     int char_str; //the character counter (utf 8 characters are weird in c)
-    bool have_lines;
+    bool have_lines; //if have lines or not
 
-    btxt(const bool& have_lines);
-    btxt(const std::string& input, const bool& have_lines);
+    btxt(const bool& have_lines); //constructor 1
+    btxt(const std::string& input, const bool& have_lines); //constructor 2
     btxt& operator+=(const char& c);  //overloads += operator
  
     std::string to_str(); //converts big text to string

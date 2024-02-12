@@ -53,6 +53,8 @@ have_lines(have_lines)
 
 //overloads += operator
 btxt& btxt::operator+=(const char& c){
+
+
     switch(tolower(c)){
         //letters
         case 'a' ... 'z': 
@@ -100,6 +102,8 @@ btxt& btxt::operator+=(const char& c){
 
 //converts variables to a string
 std::string btxt::to_str(){
+
+    //if include lines, print them 
     if(this->have_lines){
         for (size_t i = 0; i < this->char_str-1; i++)
         {
