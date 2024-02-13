@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=btxt
+Comment=BIG TERMINAL TEXT - cli tool
+Terminal=true
+Exec=/usr/bin/btxt
+Categories=Utility;Development;Building;
+Type=Application

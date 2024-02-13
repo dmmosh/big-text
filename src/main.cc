@@ -9,9 +9,6 @@ TODO: add support for more big text
 dsj
 */
 
-
-
-
 int main(int argc, char** argv){
 
     //if no arguments are provided, just print the help page

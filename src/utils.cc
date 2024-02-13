@@ -1,6 +1,6 @@
-#include "./header.h"
+#include "./header.h" //header file
 
-
+// SETS CONSTANT STATIC LISTS OF STRINGS
 const std::vector<std::string> btxt::top_big = {
     "▄▀█", "█▄▄", "█▀▀", "█▀▄", "█▀▀", "█▀▀", "█▀▀", "█ █", "█", "  █", "█▄▀", "█  ", 
     "█▀▄▀█", "█▄ █", "█▀█", "█▀█", "█▀█", "█▀█", "█▀", "▀█▀", "█ █", "█ █", "█ █ █", 
@@ -17,8 +17,8 @@ const std::vector<std::string> btxt::bottom_big = {
     "█▄█", " █", "█▄", "▄▄█", "▀▀█", "▄█", "█▄█", "  █", "▀██▀", "▀▀█"
 };
 
-//converts to BIG text
-//constructor 1
+// CONSTRUCTOR 1
+// inits 
 btxt::btxt(const bool& have_lines): 
 
 // member initialization list
@@ -31,7 +31,8 @@ have_lines(have_lines)
 {};
 
 
-//converts to BIG text
+// CONSTRUCTOR 2
+// takes word input and adds it
 //string as value because it might be modified
 // constructor 2 
 // constructor overloading
@@ -52,7 +53,8 @@ have_lines(have_lines)
 };
 
 
-//constructor 3
+// CONSTRUCTOR 3 
+// FOR INPUTTING A CHARACTER
 btxt::btxt(const char& input, const bool& have_lines):
 
 // member initialization list
@@ -69,8 +71,9 @@ have_lines(have_lines)
 };
 
 
-
+// ADDS A BIG TEXT LETTER
 //overloads += operator
+// note: cant have spaces
 btxt& btxt::operator+=(const char& c){
 
 
@@ -119,7 +122,8 @@ btxt& btxt::operator+=(const char& c){
 };
 
 
-
+// CONVERTS STRINGS TO A BIG ONE
+// convenient to put the top and bottom lines here
 //converts variables to a string
 std::string btxt::to_str(){
 
@@ -143,7 +147,7 @@ std::string btxt::to_str(){
     bottom_line;
 }
 
-
+// CHECKS IF THE GIVEN STRING IS A NUMBER
 // if string is an int
 bool is_int(const std::string& input, const int& start_i){
     for (const char& c: input.substr(start_i))
@@ -156,6 +160,7 @@ bool is_int(const std::string& input, const int& start_i){
     return true;
 }
 
+// PRINTS THE HELP PAGE
 //prints the help page erf
 void help(const char* path) {
     //gets the path of executable 
@@ -212,7 +217,7 @@ std::string exec(const char* cmd) {
     return result;
 }
 
-//PRINTS BIG TEXT INTO THE OUTPUT
+//PRINTS BIG TEXT INTO THE TERMINAL
 void sys_btxt(const std::string& out, const bool& line, int repeat = 1){
     static const int t_cols = std::stoi(exec("stty size | awk '{print $2}'")); //terminal size
     std::vector<btxt> big_out = {btxt(line)}; //vector of big text classes
@@ -236,7 +241,7 @@ void sys_btxt(const std::string& out, const bool& line, int repeat = 1){
     }
 }
 
-
+//ECHO SYSTEM CALLS FROM A STRING
 //system calls but string as input
 void sys(const std::string& input){
         std::system(("echo -e \"" + input + "\"").c_str());
