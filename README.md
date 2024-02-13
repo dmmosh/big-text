@@ -11,7 +11,6 @@ Makes the text real big.
 
 I'm trying to get it to work on Windows but so far it's only available on Linux, MacOS, and Android.
 
-&emspHELLO
 USAGE: 
     btxt [options] <text> ...
 
