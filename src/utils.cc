@@ -187,7 +187,7 @@ void help(const char* path) {
     sys("Function from Inficonnect4 made for a terminal executable" );
     sys("written in C++ ");
     sys("\nUSAGE: " );
-    sys("    btxt [options] text ..." );
+    sys("    btxt [options] <text> ..." );
     sys("" );
     sys("\nOPTIONS:" );
     sys("    -h, --help          help page" );
