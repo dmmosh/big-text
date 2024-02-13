@@ -11,7 +11,7 @@ Makes the text real big.
 
 I'm trying to get it to work on Windows but so far it's only available on Linux, MacOS, and Android.
 
-
+&emspHELLO
 USAGE: 
     btxt [options] <text> ...
 
@@ -27,17 +27,20 @@ OPTIONS:
 echo -e "█ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀"
 echo -e "█ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄"
 echo
+# clone the repo
 git clone https://github.com/wettestsock/big-text
 cd ./big-text
 chmod +x ./install.sh
 ./install.sh
+cd ..
 ```
 
 ```
 echo -e "█ █ █▄ █ █ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀"
 echo -e "█▄█ █ ▀█ █ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄"
+# go to the cloned repo location
 echo
-sudo ./uninstall.sh
+sudo ./big-text/uninstall.sh
 ```
 
 ```
