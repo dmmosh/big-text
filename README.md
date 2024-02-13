@@ -11,16 +11,17 @@ Makes the text real big.
 
 I'm trying to get it to work on Windows but so far it's only available on Linux, MacOS, and Android.
 
+```
 USAGE: 
     btxt [options] <text> ...
 
 OPTIONS:
--h, --help          help page
--n, --newline       prints following text in a newline
--nl, --no-lines     removes the top and bottom lines, enabled by default
--x=, --repeat=<value> repeats the text a given N times
--t, --test          tests the text
-
+    -h, --help          help page
+    -n, --newline       prints following text in a newline
+    -nl, --no-lines     removes the top and bottom lines, enabled by default
+    -x=, --repeat=<value> repeats the text a given N times
+    -t, --test          tests the text
+```
 
 ```
 echo -e "█ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀"
