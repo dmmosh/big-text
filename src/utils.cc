@@ -104,8 +104,12 @@ btxt& btxt::operator+=(const char& c){
             break;
         //special characters
         case '.':  this->top += ' '; this->bottom += "▄"; this->char_str++; break;
+        case ':': this->top += "▀"; this->bottom += "▄"; this->char_str++; break;
+        case ';': this->top += "▀"; this->bottom += "█"; this->char_str++; break;
         case ',': this->top += ' '; this->bottom += "█"; this->char_str++; break;
-        case '\'': this->top += "▀"; this->bottom += ' '; this->char_str++; break;
+        case '\'': this->top += "█"; this->bottom += ' '; this->char_str++; break;
+        case '\\': this->top += "█ "; this->bottom += " █"; this->char_str+=2; break;
+        case '/': this->top += " █"; this->bottom += "█ "; this->char_str+=2; break;
         case '-': this->top += "▄▄"; this->bottom += "  "; this->char_str+=2; break;
         case ' ':  this->top += ' '; this->bottom += ' '; this->char_str++; break;
         case '!': this->top += "█"; this->bottom += "▄"; this->char_str++; break;
@@ -197,10 +201,10 @@ void help(const char* path) {
 void test(){
     sys_btxt("the brown fox jumps over the lazy dog", 1, 1);
     sys_btxt("0123456789", 1, 1);
-    sys_btxt(".,\\- !?", 1, 1);
+    sys_btxt(".,:;'\\/- !?", 1, 1);
     sys_btxt("the brown fox jumps over the lazy dog", 0, 1);
     sys_btxt("0123456789", 0, 1);
-    sys_btxt(".,\\- !?", 0, 1);
+    sys_btxt(".,:;'\\/- !?", 0, 1);
 }
 
 //RETURNS OUTPUT OF A COMMAND
