@@ -23,11 +23,13 @@ OPTIONS:
     -t, --test          tests the text
 ```
 
+
+
+
 ```
-echo -e "█ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀"
-echo -e "█ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄"
-echo
-# clone the repo
+#   █ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀
+#   █ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄
+# go to the dir you want to clone into
 git clone https://github.com/wettestsock/big-text
 cd ./big-text
 chmod +x ./install.sh
@@ -36,17 +38,17 @@ cd ..
 ```
 
 ```
-echo -e "█ █ █▄ █ █ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀"
-echo -e "█▄█ █ ▀█ █ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄"
+#   █ █ █▄ █ █ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀
+#   █▄█ █ ▀█ █ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄
 # go to the cloned repo location
-echo
-sudo ./big-text/uninstall.sh
+cd ./big-text
+sudo ./uninstall.sh
 ```
 
 ```
-echo -e "█▀▄▀█ ▄▀█ █▄ █ █ █ ▄▀█ █     █▀▀ █▀█ █▀▄▀█ █▀█ █ █   █▀▀ ▀"
-echo -e "█ ▀ █ █▀█ █ ▀█ █▄█ █▀█ █▄▄   █▄▄ █▄█ █ ▀ █ █▀▀ █ █▄▄ ██▄ ▄"
-echo
+#   █▀▄▀█ ▄▀█ █▄ █ █ █ ▄▀█ █     █▀▀ █▀█ █▀▄▀█ █▀█ █ █   █▀▀ ▀
+#   █ ▀ █ █▀█ █ ▀█ █▄█ █▀█ █▄▄   █▄▄ █▄█ █ ▀ █ █▀▀ █ █▄▄ ██▄ ▄
+#
 git clone https://github.com/wettestsock/big-text/
 cd ./big-text
 g++ src/main.cc src/utils.cc -o btxt
