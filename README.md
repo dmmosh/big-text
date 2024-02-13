@@ -5,9 +5,7 @@
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ```
 
-
-A function from my Inficonnect4 project made into a separate executable.
-Makes the text real big.
+Makes the terminal text really big. Designed for use in other CLI tools, mainly to deliver some big and very important text, whatever that may be. A function from my Inficonnect4 project turned into an advanced CLI tool.
 
 I'm trying to get it to work on Windows but so far it's only available on Linux, MacOS, and Android.
 
