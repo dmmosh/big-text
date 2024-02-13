@@ -43,6 +43,8 @@ cd ..
 # go to the cloned repo location
 cd ./big-text
 sudo ./uninstall.sh
+cd ..
+rm -rf ./big-text
 ```
 
 ```
