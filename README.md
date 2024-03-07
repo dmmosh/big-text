@@ -32,7 +32,7 @@ OPTIONS:
 #   █ █▄ █ █▀ ▀█▀ ▄▀█ █   █   ▀
 #   █ █ ▀█ ▄█  █  █▀█ █▄▄ █▄▄ ▄
 # go to the dir you want to clone into
-git clone https://github.com/wettestsock/big-text
+git clone https://github.com/dmmosh/big-text
 cd ./big-text
 chmod +x ./install.sh
 ./install.sh
